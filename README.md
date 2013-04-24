@@ -10,3 +10,7 @@ Download and install [Prince](http://www.princexml.com/download/).
 ```
 ./pdf.sh
 ```
+
+# iPlanningPoker iOS App
+
+Find the source [here](https://github.com/gabac/iPlanningPoker)
