@@ -925,7 +925,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-                Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe RXX.
+                Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe <a href="#figure-use-case-7">R07</a>.
             </td>
         </tr>
         <tr>
@@ -970,7 +970,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-                Die iPhones müssen sich mit einem iPad verbinden. Siehe RXX.
+                Die iPhones müssen sich mit einem iPad verbinden. Siehe <a href="#figure-use-case-7">R07</a>.
             </td>
         </tr>
         <tr>
@@ -1017,8 +1017,8 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <th>Vorbedingungen</th>
             <td>
                 <ul>
-                    <li>Das iPhone muss die Karte dem iPad übermittelt haben und das iPad muss die Karten empfangen haben. Siehe RXX und R04</li>
-                    <li>Alle Entwickler müssen eine Karte ausgewählt haben. Siehe RXX.</li>
+                    <li>Das iPhone muss die Karte dem iPad übermittelt haben und das iPad muss die Karten empfangen haben. Siehe <a href="#figure-use-case-8">R08</a> und <a href="#figure-use-case-4">R04</a></li>
+                    <li>Alle Entwickler müssen eine Karte ausgewählt haben. Siehe <a href="#figure-use-case-10">R10</a>.</li>
                 </ul>
             </td>
         </tr>
@@ -1065,7 +1065,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-               Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe RXX.
+               Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe <a href="#figure-use-case-7">R07</a>.
             </td>
         </tr>
         <tr>
@@ -1112,8 +1112,8 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <th>Vorbedingungen</th>
             <td>
                 <ul>
-                    <li>Das iPhone muss mit einem iPad verbunden sein. Siehe RXX.</li>
-                    <li>Der Entwickler muss eine Karte ausgewählt haben. Siehe RXX.</li>
+                    <li>Das iPhone muss mit einem iPad verbunden sein. Siehe <a href="#figure-use-case-7">R07</a>.</li>
+                    <li>Der Entwickler muss eine Karte ausgewählt haben. Siehe <a href="#figure-use-case-8">R08</a>.</li>
                 </ul>
             </td>
         </tr>
@@ -1206,7 +1206,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-                Es muss nach verfügbare iPads gesucht worden sein. Siehe R06.
+                Es muss nach verfügbare iPads gesucht worden sein. Siehe <a href="#figure-use-case-6">R06</a>.
             </td>
         </tr>
         <tr>
@@ -1252,7 +1252,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-                Das iPhone muss mit einem iPad verbunden sein. Siehe R07.
+                Das iPhone muss mit einem iPad verbunden sein. Siehe <a href="#figure-use-case-7">R07</a>.
             </td>
         </tr>
         <tr>
@@ -1275,15 +1275,15 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     <tbody>
         <tr>
             <th>#</th>
-            <td>R08</td>
+            <td>R09</td>
         </tr>
         <tr>
             <th>Name</th>
-            <td>Karte auswählen</td>
+            <td>Verdecktes wählen</td>
         </tr>
         <tr>
             <th>System</th>
-            <td>Entwickler</td>
+            <td>iPhone</td>
         </tr>
         <tr>
             <th>Priorität</th>
@@ -1292,13 +1292,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Beschreibung</th>
             <td>
-               Es muss <strong>eine</strong> Karte aus einer Liste ausgewählt werden. Die Karten haben die Werte 0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, ? und ein Bild einer Kaffeetasse.
+               Dem Entwickler soll es möglich sein, seine Karte so verdeckt wie möglich zu wählen. Sollten andere Entwickler den gewählten Wert sehen, könnte diese unnötig beeinflusst werden
             </td>
         </tr>
         <tr>
             <th>Vorbedingungen</th>
             <td>
-                Das iPhone muss mit einem iPad verbunden sein. Siehe R07.
+                -
             </td>
         </tr>
         <tr>
@@ -1309,7 +1309,237 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         </tr>
     </tbody>
 </table>
-<figcaption>R09: Verdecktes wählen von Karten</figcaption>
+<figcaption>R09: Verdecktes wählen</figcaption>
+</figure>
+
+<figure id="figure-use-case-10" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R10</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Aufdecken der Karten</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+                Die Karten dürfen auf dem iPad erst aufgedeckt werden, sobald alle Entwickler sich für einen Wert entschieden haben.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                -
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R10: Aufdecken der Karten</figcaption>
+</figure>
+
+<figure id="figure-use-case-11" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R11</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Drahtlose Verbindung</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad & iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+                Die Verbindung zwischen den verschiedenen Geräten soll eine drahtlose Verbindung sein. Die Technologie(Bluetooth oder WLAN) soll dabei keine Rolle spielen.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                -
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R11: Drahtlose Verbindung</figcaption>
+</figure>
+
+<figure id="figure-use-case-12" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R12</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Schnelle und einfache Verbindung</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad & iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+              Der Verbindungsaufbau zwischen dem iPad und dem iPhone soll einfach und schnell vonstattetn gehen. Der Entwickler sollte möglichst keine Eingaben tätigen müssen
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Die Verbindung muss drahtlos hergestellt werden. Siehe <a href="#figure-use-case-11">R11</a>.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R12: Schnelle und einfache Verbindung</figcaption>
+</figure>
+
+<figure id="figure-use-case-13" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R13</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Fächer UI</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>tief</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+              Die Karten sollen auf dem iPhone UI mittels einem Fächer dargestellt werden.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                -
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R13: Fächer UI</figcaption>
+</figure>
+
+<figure id="figure-use-case-14" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R14</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Pokertisch UI</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>tief</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+              Die teilnehmenden Entwickler, wie auch deren Karten, sollen auf dem iPad mittels einem Pokertisch dargestellt werden.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                -
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R13: Pokertisch UI</figcaption>
 </figure>
 
 </div>
