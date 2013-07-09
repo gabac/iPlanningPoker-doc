@@ -891,6 +891,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </figure>
 
 <h3>Anfoderungsübersicht</h3>
+<p>Die Anforderung wurden direkt aus den Use Cases abgleitet bzw. mittels den Befragungs-, Kreativitäts- und Beobachtungstechnik abgeleitet. Die Beobachtungstechnik wurde während diversen Planning Pokers eingesetzt um direkt vor Ort die wichtigsten Anforderungen heraus zu filtern. Mittels der Kreativitätstechnik wurden vor allem Anforderung für ein möglichst innvotives UI erstellt.</p>
 
 <figure id="figure-use-case-1" class="inline">
 <table width="100%">
@@ -1017,7 +1018,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <td>
                 <ul>
                     <li>Das iPhone muss die Karte dem iPad übermittelt haben und das iPad muss die Karten empfangen haben. Siehe RXX und R04</li>
-                    <li>Alle Entwickler müssen eine Karte ausgewählt haben. Siehe RXX</li>
+                    <li>Alle Entwickler müssen eine Karte ausgewählt haben. Siehe RXX.</li>
                 </ul>
             </td>
         </tr>
@@ -1110,7 +1111,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Vorbedingungen</th>
             <td>
-               Das iPhone muss mit einem iPad verbunden sein. Siehe RXX.
+                <ul>
+                    <li>Das iPhone muss mit einem iPad verbunden sein. Siehe RXX.</li>
+                    <li>Der Entwickler muss eine Karte ausgewählt haben. Siehe RXX.</li>
+                </ul>
             </td>
         </tr>
         <tr>
@@ -1124,11 +1128,230 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R05: Karte schicken</figcaption>
 </figure>
 
+<figure id="figure-use-case-6" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R06</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Verfügbare iPads anzeigen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Es werden alle iPads angezeigt mit welchem sich das iPhone verbinden kann.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Das iPad muss sich im Verbindungsmodus befinden.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R06: Verfügbare iPads anzeigen</figcaption>
+</figure>
+
+<figure id="figure-use-case-7" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R07</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>iPad auswählen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>Entwickler</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Aus einer Liste aller verfügbaren iPads muss ein iPad ausgewählt werden mit welchem sich das iPhone verbinden sollte.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Es muss nach verfügbare iPads gesucht worden sein. Siehe R06.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R07: iPad auswählen</figcaption>
+</figure>
+
+<figure id="figure-use-case-8" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R08</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Karte auswählen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>Entwickler</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Es muss <strong>eine</strong> Karte aus einer Liste ausgewählt werden. Die Karten haben die Werte 0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, ? und ein Bild einer Kaffeetasse.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Das iPhone muss mit einem iPad verbunden sein. Siehe R07.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R08: Karte auswählen</figcaption>
+</figure>
+
+<figure id="figure-use-case-9" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R08</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Karte auswählen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>Entwickler</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Es muss <strong>eine</strong> Karte aus einer Liste ausgewählt werden. Die Karten haben die Werte 0, 0.5, 1, 2, 3, 5, 8, 13, 20, 40, 100, ? und ein Bild einer Kaffeetasse.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Das iPhone muss mit einem iPad verbunden sein. Siehe R07.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R09: Verdecktes wählen von Karten</figcaption>
+</figure>
+
 </div>
 
 <div class="chapter">
 <h2>Architektur</h2>
+
+<h3>Systemumfeld (System- und Kontextabgrenzung)</h3>
+<p>
+    Das System besteht aus einer iOS App, welche sowohl auf einem iPhone wie auch auf einem iPad installiert werden kann. Je nach Kontext erfüllt die App andere Aufgaben bzw. wird von einer anderen Zielperson verwendet. Die iPhones und das iPad kommunizieren jedoch drahtlos miteinander
+</p>
+<figure id="figure-systemabgrenzung" class="inline">
+    <img src="images/systemabgrenzung.png" />
+    <figcaption>System- und Kontextabgrenzung</figcaption>
+</figure>
+
+<h3>Prozesse Systemkontext "Verbindungsaufbau"</h3>
+<ol>
+    <li>Der Scrum Master startet die App auf dem iPad und versetzt das iPad in den "Verbindungsmodus"</li>
+    <li>Das iPad sucht nach iPhones, welche sich mit einem iPad zu verbinden möchten</li>
+    <li>Der Entwickler startet die App auf dem iPhone und sucht nach einem iPad. Sobald ein iPad gefunden worden ist, verbindet sich das iPhone automatisch mit dem iPad</li>
+    <li>Das iPad zeigt alle verbundenen iPhones an</li>
+    <li>Der Scrum Master startet das Planning Poker</li>
+</ol>
+
+<h3>Prozesse Systemkontext "Karte wählen"</h3>
+<ol>
+    <li>Die Entwickler wählen eine Karte auf dem iPhone aus</li>
+    <li>Die iPhones senden den Kartenwert an das iPad</li>
+    <li>Sobald alle Entwickler eine Karte gewählt haben, zeigt das iPad den gewählten Kartenwert der einzelen Entwickler an</li>
+</ol>
+
+<h3>Aufbau</h3>
+<p>Die Applikation wird in verschiedene Teile gegliedert. Die Gruppe ViewControllers sorgt für die Darstellung der Daten innerhalb eines UIs auf dem iPad wie auch auf dem iPhone. Die Gruppe Connection sorgt sich um die Verbindung zwischen einem iPad und verschiedenen iPhones. In der Gruppe DataModel, werden die Datenb beschrieben welche zwischen dem iPad und den iPhones ausgetauscht werden.</p>
+
+<figure id="figure-klassendiagramm" class="inline">
+    <img src="images/klassendiagramm.png" />
+    <figcaption>Klassendiagramm</figcaption>
+</figure>
+
 </div>
+
 
 <div class="chapter">
 <h2>Testing</h2>
