@@ -613,9 +613,9 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
                 <td>&#160;</td>
                 <td>&#160;</td>
                 <td>&#160;</td>
+                <td colspan="4" style="border-left: 0;">◆ 26.06.13</td>
                 <td>&#160;</td>
                 <td>&#160;</td>
-                <td colspan="4" style="border-left: 0;">◆ ?</td>
                 <td>&#160;</td>
                 <td>&#160;</td>
                 <td>&#160;</td>
@@ -874,6 +874,273 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     Auf dem iPad wird die Darstellung einem Tisch ähneln. Die verschiedenen angemeldeten User werden mit ihrem
     Namen angezeigt.
 </p>
+<h3>Use Cases</h3>
+
+<p>
+    Es wurde entschieden die Use Cases seperart für das iPhone wie auch für das iPhone auf zunehmen. Zunächst folgen die Use Cases für das iPad.
+</p>
+<figure id="figure-ipad-use-cases" class="inline">
+    <img src="images/ipad_use_cases.png" />
+    <figcaption>Use Cases für das iPad</figcaption>
+</figure>
+
+<p>Die Use Cases für das iPhone</p>
+<figure id="figure-ipone-use-cases" class="inline">
+    <img src="images/iphone_use_cases.png" />
+    <figcaption>Use Cases für das iPhone</figcaption>
+</figure>
+
+<h3>Anfoderungsübersicht</h3>
+
+<figure id="figure-use-case-1" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R01</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Planning Poker starten</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>hoch</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Der Scrum Muster startet ein neues Planning Poker auf seinem iPad.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe RXX.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R01: Planning Poker starten</figcaption>
+</figure>
+<figure id="figure-use-case-2" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R02</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Verfügbare iPhones anzeigen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Das iPad zeigt alle iPhones an, welche sich mit dem iPad verbunden haben.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Die iPhones müssen sich mit einem iPad verbinden. Siehe RXX.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R02: Verfügbare iPhones anzeigen</figcaption>
+</figure>
+
+<figure id="figure-use-case-3" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R03</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Karten anzeigen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Das iPad zeigt die gewählten Karten der Entwickler aufgedeckt an.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                <ul>
+                    <li>Das iPhone muss die Karte dem iPad übermittelt haben und das iPad muss die Karten empfangen haben. Siehe RXX und R04</li>
+                    <li>Alle Entwickler müssen eine Karte ausgewählt haben. Siehe RXX</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R04: Karten empfangen</figcaption>
+</figure>
+
+<figure id="figure-use-case-4" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R04</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Karten empfangen</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPad</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Dem iPad werden drahtlos die Karten der verschiedenen Entwickler zugestellt.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+               Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe RXX.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R04: Karten empfangen</figcaption>
+</figure>
+
+<figure id="figure-use-case-5" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>R05</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Karte schicken</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>iPhone</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>mittel</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Die ausgewählt Karte des Entwicklers wird drahtlos dem verbundenen iPad übertragen
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+               Das iPhone muss mit einem iPad verbunden sein. Siehe RXX.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                tbd
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>R05: Karte schicken</figcaption>
+</figure>
+
+</div>
+
+<div class="chapter">
+<h2>Architektur</h2>
+</div>
+
+<div class="chapter">
+<h2>Testing</h2>
+
+<h3>Akzeptanz Testing</h3>
+<p>
+</p>
+
+
+<h3>Unit Testing</h3>
+<p>
+</p>
 </div>
 
 <div class="chapter">
@@ -900,6 +1167,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <div class="chapter">
 <h2>Anhang</h2>
+<h3 class="break">Glossar</h3>
 
 <h3 class="break">Abbildungsverzeichnis</h3>
 
