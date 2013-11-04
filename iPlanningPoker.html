@@ -877,21 +877,66 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <h3>Use Cases</h3>
 
 <p>
-    Es wurde entschieden die Use Cases seperart für das iPhone wie auch für das iPhone auf zunehmen. Zunächst folgen die Use Cases für das iPad.
+    Um das Use Case Diagramm möglichst einfach zu halten, wurde entschieden sich auf die zwei Haupt Use Cases zu beschränken.
 </p>
-<figure id="figure-ipad-use-cases" class="inline">
-    <img src="images/ipad_use_cases.png" />
-    <figcaption>Use Cases für das iPad</figcaption>
+<figure id="use-cases" class="inline">
+    <img src="images/use_cases.png" height="403px"/>
+    <figcaption>Use Cases</figcaption>
 </figure>
 
-<p>Die Use Cases für das iPhone</p>
-<figure id="figure-ipone-use-cases" class="inline">
-    <img src="images/iphone_use_cases.png" />
-    <figcaption>Use Cases für das iPhone</figcaption>
-</figure>
 
 <h3>Anfoderungsübersicht</h3>
 <p>Die Anforderung wurden direkt aus den Use Cases abgleitet bzw. mittels den Befragungs-, Kreativitäts- und Beobachtungstechnik abgeleitet. Die Beobachtungstechnik wurde während diversen Planning Pokers eingesetzt um direkt vor Ort die wichtigsten Anforderungen heraus zu filtern. Mittels der Kreativitätstechnik wurden vor allem Anforderung für ein möglichst innvotives UI erstellt.</p>
+
+<h4>Vorlage</h4>
+<p>Alle Anforderungen wurden anhand folgender Vorlage erstellt</p>
+<figure id="figure-use-case-xx" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>RXX</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Name des Requirements</td>
+        </tr>
+        <tr>
+            <th>System</th>
+            <td>Für welches System die Anforderung umgesetzt wird(iPad oder iPhone).</td>
+        </tr>
+        <tr>
+            <th>Priorität</th>
+            <td>Prioritäten sind niedrig, mittel und hoch</td>
+        </tr>
+        <tr>
+            <th>Beschreibung</th>
+            <td>
+               Eine kurze Zusammenfassung der Anforderung.
+            </td>
+        </tr>
+        <tr>
+            <th>Vorbedingungen</th>
+            <td>
+                Auflistung allfälliger Vorbedingungen.
+            </td>
+        </tr>
+        <tr>
+            <th>Querbezug</th>
+            <td>
+                Auflistung allfälliger Querbezüge.
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>RXX: Abbildungsunterschrift</figcaption>
+</figure>
+
+<h4>Anforderungen</h4>
 
 <figure id="figure-use-case-1" class="inline">
 <table width="100%">
@@ -926,6 +971,12 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <th>Vorbedingungen</th>
             <td>
                 Es muss mindestens ein iPhone eines Entwicklers mit dem iPad verbunden sein. Siehe <a href="#figure-use-case-7">R07</a>.
+            </td>
+        </tr>
+        <tr>
+            <th>Akzeptanz Tests</th>
+            <td>
+                <a href="figure-acceptance-test-1">Starten einer Planning Session</a>
             </td>
         </tr>
         <tr>
@@ -1588,8 +1639,84 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3>Akzeptanz Testing</h3>
 <p>
+    Die Akzeptenz Test werden anhand der Requirements definiert und habe daher eine direkte Verbindung zu einem Requirement.
 </p>
 
+<h4>Vorlage</h4>
+<p>Alle Akzeptanz Tests wurden anhand folgender Vorlage erstellt.</p>
+<figure id="figure-acceptance-test-xx" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>ATXX</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Name des Tests</td>
+        </tr>
+        <tr>
+            <th>Aktivität</th>
+            <td>Aktivität, welche ausgeführt werden soll.</td>
+        </tr>
+        <tr>
+            <th>Soll Verhalten</th>
+            <td>Erwartetes Verhalten</td>
+        </tr>
+        <tr>
+            <th>Ist Verhalten</th>
+            <td>
+              Eingetroffenes Verhalten
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>ATXX: Abbildungsunterschrift</figcaption>
+</figure>
+
+<h4>Akzeptanz Tests</h4>
+<figure id="figure-acceptance-test-1" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="30%" />
+        <col width="70%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <td>AT01</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>Starten einer Planning Session</td>
+        </tr>
+        <tr>
+            <th>Aktivität</th>
+            <td>Der Scrum Master startet auf einem iPad die App. Innerhalb der App startet er eine neue Planning Session</td>
+        </tr>
+        <tr>
+            <th>Soll Verhalten</th>
+            <td>
+                <ul>
+                    <li>Die App soll ohne Probleme aufstarten.</li>
+                    <li>Es muss möglich sein eine neue Planning Session zu starten.</li>
+                    <li>Das iPad befinden sich im Verbindungsmodus und erscheint auf den anderen iPhones.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Ist Verhalten</th>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>AT01: Starten einer Planning Session</figcaption>
+</figure>
 
 <h3>Unit Testing</h3>
 <p>
