@@ -62,6 +62,10 @@ ul {
     padding-left: 40px;
 }
 
+td ul {
+     padding-left: 15px;
+}
+
 h1 {
     font-size: 3em;
 }
@@ -832,7 +836,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     Entscheidung gefallen werden.</p>
     
 <figure id="figure-kartendeck" class="inline">
-    <img src="images/CrispPlanningPokerDeck.jpg" />
+    <img src="images/CrispPlanningPokerDeck.jpg" width="400"/>
     <figcaption>Beispielhaftes <a href="http://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Kartendeck</a></figcaption>
 </figure>
 
@@ -851,7 +855,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </p>
 
 <figure id="figure-mockup" class="inline">
-<img src="images/endvision.png" width="400" />
+<img src="images/endvision.png" width="350" />
 <figcaption>Mockup</figcaption>
 </figure>
 
@@ -880,7 +884,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     Um das Use Case Diagramm möglichst einfach zu halten, wurde entschieden sich auf die zwei Haupt Use Cases zu beschränken.
 </p>
 <figure id="use-cases" class="inline">
-    <img src="images/use_cases.png" height="403px"/>
+    <img src="images/use_cases.png" height="350"/>
     <figcaption>Use Cases</figcaption>
 </figure>
 
@@ -942,7 +946,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>RXX: Abbildungsunterschrift</figcaption>
 </figure>
 
-<h4>Anforderungen</h4>
+<h4 style="page-break-before: always">Anforderungen</h4>
 
 <figure id="figure-use-case-1" class="inline">
 <table width="100%">
@@ -1766,7 +1770,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>ATXX: Abbildungsunterschrift</figcaption>
 </figure>
 
-<h4>Akzeptanz Tests</h4>
+<h4 style="page-break-before: always">Akzeptanz Tests</h4>
 <figure id="figure-acceptance-test-1" class="inline">
 <table width="100%">
     <colgroup>
@@ -1966,11 +1970,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Soll Verhalten</th>
             <td>
-                <ul>
-                    <li>Alle Entwickler haben eine Karte gewählt.</li>
-                    <li>Die Karten werden auf dem iPad aufgedeckt, sobald alle Entwickler eine Karte gewählt haben.</li>
-                    <li>Zu jedem Entwickler wird der gewählte Kartenwert angezeigt..</li>
-                </ul>
+                <div>
+                    <ul>
+                        <li>Alle Entwickler haben eine Karte gewählt.</li>
+                        <li>Die Karten werden auf dem iPad aufgedeckt, sobald alle Entwickler eine Karte gewählt haben.</li>
+                        <li>Zu jedem Entwickler wird der gewählte Kartenwert angezeigt..</li>
+                    </ul>
+                </div>    
             </td>
         </tr>
         <tr>
@@ -1987,18 +1993,49 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>
     Die App wird mittels dem Integrationsserver <a href="http://jenkins-ci.org">Jenkins</a> bei jedem Change neu gebaut. Dabei werden jeweils vorgängig alle Unit Tests ausgeführt. Dafür wird das OpenSource Tool <a href="https://github.com/facebook/xctool">xctool</a> verwendet.
 </p>
-<p>todo screenshots jenkins</p>
+<p>Unit Test wurden pro Package durchgeführt. Anbei eine Übersicht der Tests und deren Resultat.</p>
+
+<figure id="figure-mockup" class="inline">
+<img src="images/unit_test_result.png" width="400" />
+<figcaption>Resultat Unit Test</figcaption>
+</figure>
+
 </div>
 
 <div class="chapter">
 <h2>Anlayse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">Game Center</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer Connection, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">Game Center</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
 </p>
 <p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 gestartet wurde. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
+
+<h3>GKSession und GKSessionDelegate</h3>
+<p>
+    Um die Klasse GKSession zu instanzieren ist es notwendig sich für einen Modus zu entscheiden. Dieser bestimmt wie sich die Klasse verhalten soll. Zur Verfügung stehen drei verschiedene <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html#//apple_ref/c/econst/GKSessionModeServer">Modi</a>.
+</p>
+
+<pre class="code">
+<code>
+    typedef enum {
+       GKSessionModeServer,
+       GKSessionModeClient,
+       GKSessionModePeer,
+    } GKSessionMode;
+</code>
+</pre>
+
+<p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für uns nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzewerk verwendet.</p>
+
+<p>Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind folgende:</p>
+<ul>
+    <li>Veränderungen an den verbundenen Clients z.B. wenn ein iPhone die Verbindung unterbricht.</li>
+    <li>Request um sich mit dem Server zu verbinden</li>
+    <li>Allfällige Kommunikationsfehler</li>
+</ul>
+
 </div>
 
 <div class="chapter">
