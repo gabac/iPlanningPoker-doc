@@ -1714,8 +1714,8 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <h3>Aufbau</h3>
 <p>Die Applikation wird in verschiedene Teile gegliedert. Die Gruppe ViewControllers sorgt für die Darstellung der Daten innerhalb eines UIs auf dem iPad wie auch auf dem iPhone. Die Gruppe Connection sorgt sich um die Verbindung zwischen einem iPad und verschiedenen iPhones. In der Gruppe DataModel, werden die Datenb beschrieben welche zwischen dem iPad und den iPhones ausgetauscht werden.</p>
 
-<figure id="figure-klassendiagramm" class="inline">
-    <img src="images/klassendiagramm.png" />
+<figure id="figure-Klassendiagramm" class="inline">
+    <img src="images/klassendiagramm.png" height="500"/>
     <figcaption>Klassendiagramm</figcaption>
 </figure>
 
@@ -2012,7 +2012,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </p>
 <p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 gestartet wurde. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
-<p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das auffinden, wie auch das anpreisen der Geräte geschieht über einen Abstraktionslayer. Für die Kommunikation aber auch das auffinden der Geräte wird der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
+<p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das auffinden, wie auch das anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
 <figure id="figure-mockup" class="inline">
 <img src="images/bonjour_overview.png" width="400" />
@@ -2056,12 +2056,17 @@ sessionMode:(GKSessionMode)mode
 </code>
 </pre>
 
+<p>
+    Mit dieser Methode wird eine Verbindung zum Server aufgebaut. Dabei ist die <i>peerId</i> eine eindeutige UUID, welche den Server identifiziert. Das Timout wird innerhalb via einer Konstante gesteuert.
+</p>
 <pre class="code">
 <code>
 - (void)connectToPeer:(NSString *)peerID withTimeout:(NSTimeInterval)timeout
 </code>
 </pre>
 
+<p>
+    Um Daten an den Server senden zu können, in unserem den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-8">Netzwerkverkehr</a> behandelt dieses Thema im Detail. Das peers Array beinhaltet in diesem Fall nur ein Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung versichert, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch abbricht.</p>
 <pre class="code">
 <code>
 - (BOOL)sendData:(NSData *)data toPeers:(NSArray *)peers
@@ -2070,6 +2075,9 @@ withDataMode:(GKSendDataMode)mode error:(NSError **)error
 </pre>
 
 <h4>Server</h4>
+<p>
+    Um einen Server zu instanzieren muss der Enumwert von <i>sessionMode</i> auf "GKSessionModeServer" gesetzt werden. Dies ist der wichtigste Unteschied zum Client.
+</p>
 <pre class="code">
 <code>
 - (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
@@ -2077,6 +2085,9 @@ sessionMode:(GKSessionMode)mode
 </code>
 </pre>
 
+<p>
+    Um Daten an alle Clients zu senden wird eine unterschiedliche Methode verwendet. Diese Methode erlaubt uns, Daten an alle verbundenden Clients zu senden.
+</p>
 <pre class="code">
 <code>
 - (BOOL)sendDataToAllPeers:(NSData *)data withDataMode:(GKSendDataMode)mode
