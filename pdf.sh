@@ -1,2 +1,2 @@
 #!/bin/bash
-prince --javascript iPlanningPoker.html && open iPlanningPoker.pdf
+prince --javascript index.html && mv index.pdf iPlanningPoker.pdf && open iPlanningPoker.pdf
