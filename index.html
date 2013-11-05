@@ -2012,6 +2012,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </p>
 <p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 gestartet wurde. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
+<p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das auffinden, wie auch das anpreisen der Geräte geschieht über einen Abstraktionslayer. Für die Kommunikation aber auch das auffinden der Geräte wird der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
+
+<figure id="figure-mockup" class="inline">
+<img src="images/bonjour_overview.png" width="400" />
+<figcaption>Bonjour <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Art/bonjour_intro_2x.png">Overview</a></figcaption>
+</figure>
+
 <h3>GKSession und GKSessionDelegate</h3>
 <p>
     Um die Klasse GKSession zu instanzieren ist es notwendig sich für einen Modus zu entscheiden. Dieser bestimmt wie sich die Klasse verhalten soll. Zur Verfügung stehen drei verschiedene <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html#//apple_ref/c/econst/GKSessionModeServer">Modi</a>.
@@ -2035,6 +2042,54 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     <li>Request um sich mit dem Server zu verbinden</li>
     <li>Allfällige Kommunikationsfehler</li>
 </ul>
+
+<h3>Typische Methoden</h3>
+
+<p>Der Abschnitt behandelt die wichtigsten Methoden der GameKit API, welche in diesem Projekt verwendet worden sind. Um eine vollstänge Übersicht zu erhalten, empfiehlt sich die <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">Dokumentation</a> von Apple selbst.</p>
+
+<h4>Client</h4>
+<p>Diese Instanzmethode wird verwendet um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Client mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
+<pre class="code">
+<code>
+- (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
+sessionMode:(GKSessionMode)mode
+</code>
+</pre>
+
+<pre class="code">
+<code>
+- (void)connectToPeer:(NSString *)peerID withTimeout:(NSTimeInterval)timeout
+</code>
+</pre>
+
+<pre class="code">
+<code>
+- (BOOL)sendData:(NSData *)data toPeers:(NSArray *)peers
+withDataMode:(GKSendDataMode)mode error:(NSError **)error
+</code>
+</pre>
+
+<h4>Server</h4>
+<pre class="code">
+<code>
+- (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
+sessionMode:(GKSessionMode)mode
+</code>
+</pre>
+
+<pre class="code">
+<code>
+- (BOOL)sendDataToAllPeers:(NSData *)data withDataMode:(GKSendDataMode)mode
+error:(NSError **)error
+</code>
+</pre>
+
+<h3>Verbindungsaufbau</h3>
+
+<figure id="figure-mockup" class="inline">
+<img src="images/connections_ablauf.png" height="400" />
+<figcaption>Verbindungsaufbau</figcaption>
+</figure>
 
 </div>
 
