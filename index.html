@@ -11,6 +11,9 @@
     
     @top-right {
         content: "Version 1.0";
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 1em;
+        color: #aaa;
     }
 
     @bottom-left {
@@ -192,6 +195,8 @@ div.chapter h3:before {
 
 h3.break,
 h4.break,
+p.break,
+figure.break,
 div.chapter {
     page-break-before: always;
 }
@@ -717,11 +722,11 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     </table>
     <figcaption>Projektplanung</figcaption>
     </figure>
-    <h3>Angepasste Planung</h3>
+    <h3 class="break">Angepasste Planung</h3>
     <p>
-        Die Semesterarbeit wurde um einen Monat verlängert.
+        Die Semesterarbeit wurde um einen Monat verlängert, da ich geschäftlich sehr viel zu tun hatte. Die Projektplannung wurde entsprechend angepasst.
     </p>
-    <figure id="figure-gantt">
+    <figure id="figure-gantt-angepasst">
     <table>
         <colgroup>
             <col width="160" />
@@ -1069,7 +1074,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     Entscheidung gefällt werden.</p>
     
 <figure id="figure-kartendeck" class="inline">
-    <img src="images/CrispPlanningPokerDeck.jpg" width="400"/>
+    <img src="images/CrispPlanningPokerDeck.jpg" width="300"/>
     <figcaption>Beispielhaftes <a href="http://en.wikipedia.org/wiki/File:CrispPlanningPokerDeck.jpg">Kartendeck</a></figcaption>
 </figure>
 
@@ -1092,7 +1097,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>Mockup</figcaption>
 </figure>
 
-<p>
+<p class="break">
     Um es für den User einfach zu halten wird eine universelle App erstellt. Dies bedeutet die App kann sowohl auf
     dem iPhone, wie auch auf dem iPad ausgeführt werden. Es wird dynamisch entschieden welche Inhalte auf welchem
     Gerät angezeigt werden sollen.
@@ -1111,7 +1116,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     Auf dem iPad wird die Darstellung einem Tisch ähneln. Die verschiedenen angemeldeten User werden mit ihrem
     Namen angezeigt.
 </p>
-<h3>Use Cases</h3>
+<h3 class="break">Use Cases</h3>
 
 <p>
     Um das Use Case Diagramm möglichst einfach zu halten, wurde entschieden sich auf die zwei wichtigsten Use Cases zu beschränken.
@@ -1122,7 +1127,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </figure>
 
 
-<h3>Anforderungsübersicht</h3>
+<h3 class="break">Anforderungsübersicht</h3>
 <p>Die Anforderungen wurden direkt aus den Use Cases abgleitet bzw. mittels den Befragungs-, Kreativitäts- und Beobachtungstechnik abgeleitet. Die Beobachtungstechniken wurde während diversen Planning Pokers eingesetzt um direkt vor Ort die wichtigsten Anforderungen heraus zu filtern. Mittels der Kreativitätstechnik wurden vor allem Anforderung für ein möglichst innovatives UI erstellt.</p>
 
 <h4>Vorlage</h4>
@@ -1284,7 +1289,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R02: Verfügbare iPhones anzeigen</figcaption>
 </figure>
 
-<figure id="figure-use-case-3" class="inline">
+<figure id="figure-use-case-3" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -1391,7 +1396,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R04: Karten empfangen</figcaption>
 </figure>
 
-<figure id="figure-use-case-5" class="inline">
+<figure id="figure-use-case-5" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -1498,7 +1503,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R06: Verfügbare iPads anzeigen</figcaption>
 </figure>
 
-<figure id="figure-use-case-7" class="inline">
+<figure id="figure-use-case-7" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -1602,7 +1607,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R08: Karte auswählen</figcaption>
 </figure>
 
-<figure id="figure-use-case-9" class="inline">
+<figure id="figure-use-case-9" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -1706,7 +1711,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R10: Aufdecken der Karten</figcaption>
 </figure>
 
-<figure id="figure-use-case-11" class="inline">
+<figure id="figure-use-case-11" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -1810,7 +1815,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>R12: Schnelle und einfache Verbindung</figcaption>
 </figure>
 
-<figure id="figure-use-case-13" class="inline">
+<figure id="figure-use-case-13" class="inline break">
 <table width="100%">
     <colgroup>
         <col width="30%" />
@@ -2222,13 +2227,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>AT05: Karten aufdecken</figcaption>
 </figure>
 
-<h3>Unit Testing</h3>
+<h3 class="break">Unit Testing</h3>
 <p>
     Die App wird mittels dem Integrationsserver <a href="http://jenkins-ci.org">Jenkins</a> bei jedem Change neu gebaut. Vor dem erstellen der App werden alle Unit Tests ausgeführt. Dafür wird das OpenSource Tool <a href="https://github.com/facebook/xctool">xctool</a> verwendet.
 </p>
 <p>Unit Tests wurden pro Package durchgeführt. Nachfolgend eine Übersicht der Tests und deren Resultat.</p>
 
-<figure id="figure-mockup" class="inline">
+<figure id="figure-unit-test" class="inline">
 <img src="images/unit_test_result.png" width="400" />
 <figcaption>Resultat Unit Test</figcaption>
 </figure>
@@ -2245,14 +2250,14 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </p>
 <p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 begonnen hat. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
-<p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
+<p class="break">Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
 <figure id="figure-bonjour" class="inline">
 <img src="images/bonjour_overview.png" width="400" />
 <figcaption>Bonjour <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Art/bonjour_intro_2x.png">Overview</a></figcaption>
 </figure>
 
-<h3>GKSession und GKSessionDelegate</h3>
+<h3 class="break">GKSession und GKSessionDelegate</h3>
 <p>
     Um die Klasse GKSession zu instanzieren ist es notwendig sich für einen Modus zu entscheiden. Dieser bestimmt wie sich die Klasse verhalten soll. Zur Verfügung stehen drei verschiedene <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html#//apple_ref/c/econst/GKSessionModeServer">Modi</a>.
 </p>
@@ -2281,7 +2286,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
 
-<p>Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind:</p>
+<p class="break">Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind:</p>
 <ul>
     <li>Veränderungen an den verbundenen Clients z.B. wenn ein iPhone die Verbindung unterbricht.</li>
     <li>Verbindungsaufbau mit einem Server</li>
@@ -2301,7 +2306,7 @@ sessionMode:(GKSessionMode)mode
 </code>
 </pre>
 
-<p>
+<p class="break">
     Mit dieser Methode wird eine Verbindung zum Server aufgebaut. Dabei ist die <i>peerId</i> eine eindeutige UUID, welche den Server identifiziert. Das Timeout wird mittels einer Konstante gesteuert.
 </p>
 <pre class="code">
@@ -2320,7 +2325,7 @@ withDataMode:(GKSendDataMode)mode error:(NSError **)error
 </code>
 </pre>
 
-<h4>Server</h4>
+<h4 class="break">Server</h4>
 <p>
     Um einen Server zu instanzieren muss der Enumwert von <i>sessionMode</i> auf "GKSessionModeServer" gesetzt werden. Dies ist der wichtigste Unterschied zum Client.
 </p>
@@ -2340,13 +2345,6 @@ sessionMode:(GKSessionMode)mode
 error:(NSError **)error
 </code>
 </pre>
-
-<h3>Verbindungsaufbau</h3>
-
-<figure id="figure-mockup" class="inline">
-<img src="images/connections_ablauf.png" height="400" />
-<figcaption>Verbindungsaufbau</figcaption>
-</figure>
 
 </div>
 
@@ -2392,12 +2390,19 @@ typedef enum {
     </li>
     <li>Der Payloadbereich beinhaltet die eigentlichen Daten. Meldet sich z.B. ein neues iPhone bei einem iPad an, würde im Payload der Name des iPhones zu finden sein.</li>
 </ul>
-
+</div>
 <div class="chapter">
 <h2>Umsetzung der iOS App</h2>
 
 <p>
+    Aufbau
 </p>
+<h3>Verbindungsaufbau</h3>
+
+<figure id="figure-connections" class="inline">
+<img src="images/connections_ablauf.png" height="400" />
+<figcaption>Verbindungsaufbau</figcaption>
+</figure>
 </div>
 
 
@@ -2425,13 +2430,11 @@ Enum: Ein Aufzählungstyp mit einer endlichen Menge an konstanten Typen.
 UUID: Steht für Universally Unique Identifier. In diesem Projekt eine eindeutige Nummer für einen Client.
 </p>
 <p>
-Byte: .
+Byte: Ein Byte besteht aus 8 Bit. Es ist eine Masseinheit in der Informatik
 </p>
 <p>
-Hexadezimal: .
+Hexadezimalsystem: Dieses Stellwertsystem wird zur Basis 16 dargestellt. Im Unteschied zum Dezimalsystem, welches zur Basis 10 dargestellt wird.
 </p>
-
-
 
 <h3 class="break">Quellenverzeichnis</h3>
 
