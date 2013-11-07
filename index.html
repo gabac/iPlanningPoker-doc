@@ -1018,7 +1018,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>Mit Hilfe von Planning Poker wird die Komplexität von User Stories (Requirements) geschätzt. Das Schätzen
     wird mit Hilfe von Spielkarten erledigt. Diese haben typischerweise die Werte der Fibonacci Reihe:
     1, 2, 3, 5, 8, 13, 20, 40, 100. Optional gibt es noch Karten mit dem Wert 0, einem Fragezeichen (Unsicher)
-    und einer Kaffeetasse (Pause). Die Fibonacci Reihe wurde gewählt, um aufzuzeigen das komplexe User Stories schwierig zu schätzen sind. Dies führt zu einer ungenaueren Schätzung.</p>
+    und einer Kaffeetasse (Pause). Die Fibonacci Reihe wurde gewählt, um aufzuzeigen das komplexe User Stories schwieriger zu schätzen sind. Dies führt zu einer ungenaueren Schätzung.</p>
 
 <p>Das Prinzip ist simpel. Jede User Story wird besprochen und offene Fragen werden untereinander geklärt.
     Sind keine weiteren Fragen mehr vorhanden entscheidet sich jeder Entwickler, verdeckt, für eine
@@ -1072,7 +1072,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <h3>Use Cases</h3>
 
 <p>
-    Um das Use Case Diagramm möglichst einfach zu halten, wurde entschieden sich auf die zwei Haupt Use Cases zu beschränken.
+    Um das Use Case Diagramm möglichst einfach zu halten, wurde entschieden sich auf die zwei wichtigsten Use Cases zu beschränken.
 </p>
 <figure id="use-cases" class="inline">
     <img src="images/use_cases.png" height="350"/>
@@ -1586,7 +1586,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Beschreibung</th>
             <td>
-               Dem Entwickler soll es möglich sein, seine Karte so verdeckt wie möglich zu wählen. Sollten andere Entwickler den gewählten Wert sehen, könnte diese unnötig beeinflusst werden
+               Dem Entwickler soll es möglich sein, seine Karte so verdeckt wie möglich zu wählen. Sollten andere Entwickler den gewählten Wert sehen, könnten diese unnötig beeinflusst werden
             </td>
         </tr>
         <tr>
@@ -1690,7 +1690,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Beschreibung</th>
             <td>
-                Die Verbindung zwischen den verschiedenen Geräten soll eine drahtlose Verbindung sein. Die Technologie (Bluetooth oder WLAN) soll dabei keine Rolle spielen.
+                Die Verbindung zwischen den verschiedenen Geräten ist drahtlos. Die Technologie (Bluetooth oder WLAN) spielt dabei keine Rolle.
             </td>
         </tr>
         <tr>
@@ -1879,7 +1879,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3>Systemumfeld (System- und Kontextabgrenzung)</h3>
 <p>
-    Das System besteht aus einer iOS App, welche sowohl auf einem iPhone wie auch auf einem iPad installiert werden kann. Je nach Kontext erfüllt die App andere Aufgaben bzw. wird von einer anderen Zielperson verwendet. Die iPhones und das iPad kommunizieren jedoch drahtlos miteinander
+    Das System besteht aus einer iOS App, welche sowohl auf einem iPhone wie auch auf einem iPad installiert werden kann. Je nach Kontext erfüllt die App andere Aufgaben bzw. wird von einer anderen Zielperson verwendet. Die iPhones und das iPad kommunizieren drahtlos miteinander
 </p>
 <figure id="figure-systemabgrenzung" class="inline">
     <img src="images/systemabgrenzung.png" />
@@ -2165,7 +2165,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
                     <ul>
                         <li>Alle Entwickler haben eine Karte gewählt.</li>
                         <li>Die Karten werden auf dem iPad aufgedeckt, sobald alle Entwickler eine Karte gewählt haben.</li>
-                        <li>Zu jedem Entwickler wird der gewählte Kartenwert angezeigt..</li>
+                        <li>Zu jedem Entwickler wird der gewählte Kartenwert angezeigt.</li>
                     </ul>
                 </div>    
             </td>
@@ -2184,7 +2184,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>
     Die App wird mittels dem Integrationsserver <a href="http://jenkins-ci.org">Jenkins</a> bei jedem Change neu gebaut. Dabei werden jeweils vorgängig alle Unit Tests ausgeführt. Dafür wird das OpenSource Tool <a href="https://github.com/facebook/xctool">xctool</a> verwendet.
 </p>
-<p>Unit Tests wurden pro Package durchgeführt. Anbei eine Übersicht der Tests und deren Resultat.</p>
+<p>Unit Tests wurden pro Package durchgeführt. Nachfolgend eine Übersicht der Tests und deren Resultat.</p>
 
 <figure id="figure-mockup" class="inline">
 <img src="images/unit_test_result.png" width="400" />
@@ -2196,12 +2196,12 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <div class="chapter">
 <h2>Anlayse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">Game Center</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
 </p>
-<p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 gestartet wurde. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
+<p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 begonnen hat. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
 <p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
@@ -2225,12 +2225,12 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 </code>
 </pre>
 
-<p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für uns nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
+<p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
 
-<p>Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind folgende:</p>
+<p>Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind:</p>
 <ul>
     <li>Veränderungen an den verbundenen Clients z.B. wenn ein iPhone die Verbindung unterbricht.</li>
-    <li>Request um sich mit dem Server zu verbinden</li>
+    <li>Verbindungsaufbau mit einem Server</li>
     <li>Allfällige Kommunikationsfehler</li>
 </ul>
 
@@ -2239,7 +2239,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>Der Abschnitt behandelt die wichtigsten Methoden der GameKit API, welche in diesem Projekt verwendet worden sind. Um eine vollstänge Übersicht zu erhalten, empfiehlt sich die <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">Dokumentation</a> von Apple selbst.</p>
 
 <h4>Client</h4>
-<p>Diese Instanzmethode wird verwendet um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Client mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
+<p>Diese Instanzmethode wird verwendet um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Clients mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
 <pre class="code">
 <code>
 - (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
@@ -2257,7 +2257,8 @@ sessionMode:(GKSessionMode)mode
 </pre>
 
 <p>
-    Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-8">Netzwerkverkehr</a> behandelt dieses Thema im Detail. Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung versichert, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch abbricht.</p>
+    Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-8">Netzwerkverkehr</a> behandelt dieses Thema im Detail.<br />
+    Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung versichert, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
 <pre class="code">
 <code>
 - (BOOL)sendData:(NSData *)data toPeers:(NSArray *)peers
