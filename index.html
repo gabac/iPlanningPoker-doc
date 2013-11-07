@@ -221,10 +221,25 @@ div.chapter {
 
 #toc,
 #toc ol,
-#figures {
+#figures,
+#sources {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+#sources {
+    counter-reset: sources;
+}
+
+#sources li {
+    padding-left: 60px;
+    padding-bottom: 0.75em;
+}
+
+#sources li:before {
+	content: "[" counter(sources) "] ";
+	counter-increment: sources;
 }
 
 #toc > li {
@@ -408,6 +423,33 @@ function toc() {
     }
 }
 
+function sources() {
+
+    var sources = document.getElementsByTagName('a'),
+        index = document.getElementById('sources'),
+        i, source, li, href, text;
+
+    for (i = 0; i < sources.length; i++) {
+
+        source = sources[i];
+        href = source.getAttribute('href');
+        text = source.getAttribute('title');
+
+        if (href.indexOf('http') != 0) {
+            continue;
+        }
+
+        if (!text) {
+            text = source.innerHTML;
+        }
+
+        li = document.createElement('li');
+        li.appendChild(document.createTextNode(text + ': ' + href));
+        index.appendChild(li); 
+    }
+}
+
+
 function figures() {
 
     var captions = document.getElementsByTagName('figcaption'),
@@ -434,7 +476,7 @@ function figures() {
 }
 
 function init() {
-
+    sources();
     figures();
     toc();
 }
@@ -474,7 +516,7 @@ Cyril Gabathuler, <a href="mailto:cyril.gabathuler@icloud.com">cyril.gabathuler@
 
 <h3>Ausgangslage</h3>
 <p>
-Das Planning Poker ist ein Teilbestand der agilen Projektmethode Scrum. Viele Teams kennen die Probleme des Planning Pokers:
+Das Planning Poker ist ein Bestandteil der agilen Projektmethode Scrum. Viele Teams kennen die Probleme des Planning Pokers:
 </p>
 <ul>
     <li>Zu wenige Kartendecks sind vorhanden oder erst gar nicht auffindbar</li>
@@ -2313,7 +2355,32 @@ error:(NSError **)error
 
 <div class="chapter">
 <h2>Anhang</h2>
-<h3 class="break">Glossar</h3>
+<h3>Glossar</h3>
+<p>
+API: Application Programming Interface, bezeichnet die Schnittstelle, über
+welche der Client Daten vom Server abruft.
+</p>
+<p>
+Client: Ein Anwendungsprogramm, welches auf dem Gerät des Benutzers läuft und
+meist mit einem Server kommuniziert.
+</p>
+<p>
+Server: Eine Komponente, welche verschiedene Requests von Clients erhält und auf diese reagieren kann.
+</p>
+<p>
+UI: Kurzschreibweise für User Interface. Das Aussehen einer Applikation.
+</p>
+<p>
+Enum: Ein Aufzählungstyp mit einer endlichen Menge an konstanten Typen.
+</p>
+<p>
+UUID: Steht für Universally Unique Identifier. In diesem Projekt eine eindeutige Nummer für einen Client.
+</p>
+
+
+<h3 class="break">Quellenverzeichnis</h3>
+
+<ol id="sources"></ol>
 
 <h3 class="break">Abbildungsverzeichnis</h3>
 
