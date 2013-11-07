@@ -2238,7 +2238,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <div class="chapter">
 <h2>Analyse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
@@ -2247,7 +2247,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <p>Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
-<figure id="figure-mockup" class="inline">
+<figure id="figure-bonjour" class="inline">
 <img src="images/bonjour_overview.png" width="400" />
 <figcaption>Bonjour <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Art/bonjour_intro_2x.png">Overview</a></figcaption>
 </figure>
@@ -2266,6 +2266,18 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     } GKSessionMode;
 </code>
 </pre>
+
+<p>Die Werte <i>GKSessionModeClient</i> und <i>GKSessionModeServer</i> stehen für eine Client Server Verbindung. Eine Client Server Verbindung unterhält nur Verbidungen zwischen den Clients und dem Server</p>
+<figure id="figure-client-server" class="inline">
+<img src="images/server_client.png" width="400" />
+<figcaption>Client Server Verbindungen</figcaption>
+</figure>
+
+<p>Im Gegensatz dazu steht die Peer-to-Peer Verbindung(<i>GKSessionModePeer</i>), in welcher alle beteiligten Endgeräte miteinander kommunizieren.</p>
+<figure id="figure-peer-to-peer" class="inline">
+<img src="images/peer_to_peer.png" width="400" />
+<figcaption>Peer-to-Peer Verbindungen</figcaption>
+</figure>
 
 <p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
 
@@ -2340,10 +2352,46 @@ error:(NSError **)error
 
 <div class="chapter">
 <h2>Netzwerkverkehr</h2>
-
 <p>
+    Die Kommunikation zwischen den verschiedenen iPhones und dem iPad ist klar strukturiert. Die Daten werden in sogenannten Paketen zwischen dem Server und den Clients ausgetauscht. Diese Pakete haben einen klar strukturierten Header auf welchen nun näher eingegangen wird.
 </p>
-</div>
+
+<h3>Paket Struktur</h3>
+
+<p>Ein typischer Header in der App besteht aus 10 Bytes gefolgt von dem Payload, den eigentlichen Daten.</p>
+
+<figure id="figure-packet" class="inline">
+<img src="images/packet.png" width="500" />
+<figcaption>Aufbau der Packete</figcaption>
+</figure>
+
+<ul>
+    <li>
+        Die ersten 4 Bytes identifizieren ein Paket eindeutig für die App. Nur Pakete mit diesem Header werden von der App verarbeiten. Dazu wird die Abkürzung <i>iPPr</i> verwendet. Dies steht für den Hexadezimalenwert von
+        <pre class="code">
+        <code>
+0x69505072
+        </code>
+        </pre>
+    </li>
+    <li>
+        Die nächsten 4 Bytes werden für die Nummerierung der Pakete verwendet. Nummeriert werden die Pakete um sicherzustellen, dass sie in der richtigen Reihenfolge verarbeitet werden.
+    </li>
+    <li>Die letzten 2 Bytes stehen für den Pakettyp. Je nach Typ reagiert die App anders auf die gesendeten Daten. Die Typen werden in einem Enum gehalten.
+        <pre class="code">
+        <code>
+typedef enum {
+    DataPacketTypeSignInRequest = 0x01,
+    DataPacketTypeSignInResponse = 0x02,
+    DataPacketTypeServerReady = 0x03,
+    DataPacketTypeServerQuit = 0x04,
+    DataPacketTypeUserQuit = 0x05
+} DataPacketType;
+        </code>
+        </pre>
+    </li>
+    <li>Der Payloadbereich beinhaltet die eigentlichen Daten. Meldet sich z.B. ein neues iPhone bei einem iPad an, würde im Payload der Name des iPhones zu finden sein.</li>
+</ul>
 
 <div class="chapter">
 <h2>Umsetzung der iOS App</h2>
@@ -2376,6 +2424,13 @@ Enum: Ein Aufzählungstyp mit einer endlichen Menge an konstanten Typen.
 <p>
 UUID: Steht für Universally Unique Identifier. In diesem Projekt eine eindeutige Nummer für einen Client.
 </p>
+<p>
+Byte: .
+</p>
+<p>
+Hexadezimal: .
+</p>
+
 
 
 <h3 class="break">Quellenverzeichnis</h3>
