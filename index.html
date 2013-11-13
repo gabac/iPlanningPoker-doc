@@ -496,7 +496,7 @@ ZHAW Zürcher Hochschule für Angewandte Wissenschaften<br/>
 Bachelorstudium Informatik<br/>
 Semesterarbeit<br/>
 Dozent: Beat Seeliger<br/>
-Frühlingssemester 2013
+Herbstsemester 2013
 </p>
 <h1>iPlanningPoker</h1>
 <p class="logo">
@@ -507,7 +507,7 @@ Frühlingssemester 2013
 </p>
 <p>
 Cyril Gabathuler, <a href="mailto:cyril.gabathuler@icloud.com">cyril.gabathuler@icloud.com</a><br/>
-06. November 2013
+14. November 2013
 </p>
 </div>
 
@@ -520,9 +520,9 @@ Cyril Gabathuler, <a href="mailto:cyril.gabathuler@icloud.com">cyril.gabathuler@
 <h2>Zusammenfassung</h2>
 <p>Das Ziel dieser Semesterarbeit war die Erstellung einer App für das iPhone und das iPad. Die App wurde entwickelt um das Planning Poker digital und drahtlos stattfinden zu lassen.</p>
 
-<p>Mehrere iPhone können sich drahtlos mit einem iPad verknüpfen. Die Teilnehmer können dann auf dem iPhone eine Karte mit Storypoints auswählen und diese an das iPad schicken. Haben sich alle Teilnehmer für einen Wert entschieden werden diese auf dem iPad angezeigt. Danach kann eine neue Runde begonnen werden und die Teilnehmer können sich wieder für eine Karte entscheiden.</p>
+<p>Mehrere iPhone können sich drahtlos mit einem iPad verknüpfen. Die Teilnehmer können auf dem iPhone eine Karte mit Storypoints auswählen und diese an das iPad schicken. Haben sich alle Teilnehmer für einen Wert entschieden werden diese auf dem iPad angezeigt. Danach kann eine neue Runde begonnen werden und die Teilnehmer können sich wieder für eine Karte entscheiden.</p>
 
-<p>Planning Poker wird in der agilen Projektmethode Scrum verwendet um Anforderungen in deren Komplexität zu schätzen. Die App wurde  entwickelt um bekannte Probleme zu vereinfachen. Dieses Ziel wurde klar erreicht.</p>
+<p>Planning Poker wird in der agilen Projektmethode Scrum verwendet um Anforderungen in deren Komplexität zu schätzen. Die App wurde  entwickelt um bekannte Probleme zu vereinfachen. Dieses Ziel wurden erreicht.</p>
 
 <p>Ein aufwendiger, aber auch spannender Teil, war die Umsetzung der Kommunikation zwischen den iPhones und dem iPad. Da diese drahtlos stattfindet, können verschiedenste Fehlerquellen auftauchen. Es wurde auch ein eigenes Kommunikationsprotokoll entwickelt um die Entwicklung zu vereinfachen.</p>
 
@@ -710,26 +710,6 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
                 <td>&#160;</td>
                 <td>&#160;</td>
                 <td colspan="3" style="border-left: 0;">◆ 19.10.13</td>
-            </tr>
-            <tr>
-                <td>Abschlusspräsentation</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td>&#160;</td>
-                <td colspan="4" style="border-left: 0;">◆ 04.12.13</td>
             </tr>
         </tbody>
     </table>
@@ -2071,7 +2051,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Ist Verhalten</th>
             <td>
-                Die App startet ohne Probleme auf. Nachdem ein neues Planning Poker begonnen worden ist, erscheint das iPad auf den iPhones.
+                Die App startet ohne Probleme auf. Nachdem ein neues Planning Poker begonnen worden ist, erscheint der Name des iPads auf den iPhones.
             </td>
         </tr>
     </tbody>
@@ -2474,7 +2454,7 @@ typedef enum {
 </ul>
 
 <h3>Beispiel Paket</h3>
-<p>Nehmen wir das Beispiel einer SignIn-Response. Da es das erste Packet ist, wird binär die Nummer 1 vergeben. Dies entspricht dem Wert 0x0001. Es handelt sich um einen SignIn-Response, daher wird der Packettyp auf 0x02 gesetzt. Folgendes Bild zeigt das komplette Packet, welches versendet wird.</p>
+<p>Nehmen wir das Beispiel einer SignIn-Response. Da es das erste Packet ist, wird die Nummer 1 vergeben. Dies entspricht dem Wert 0x0001. Es handelt sich um einen SignIn-Response, daher wird der Packettyp auf 0x02 gesetzt. Folgendes Bild zeigt das komplette Packet, welches versendet wird.</p>
 <figure id="figure-packet-example" class="inline">
 <img src="images/packet_example.png" width="500" />
 <figcaption>Beispiel einer SignIn-Response</figcaption>
@@ -2518,10 +2498,10 @@ typedef enum {
 <figcaption>Sequenzdiagramm</figcaption>
 </figure>
 
-<p>Die einzelnen Schritte der App werden nun durchgeangen und die verschiedenen Zustände detailiert erklärt.</p>
+<p>Die einzelnen Schritte der App werden nun durchgegangen und die verschiedenen Zustände detailiert erklärt.</p>
 
 <h4>Verbindungsaufbau</h4>
-<p>Wird die App auf dem iPhone wird dem User folgender Screen präsentiert. Die App befindet sich zu diesem Zeitpunkt im Zustand <i>ClientStateIdle</i>.</p>
+<p>Öffnet man die App auf dem iPhone wird dem User folgender Screen präsentiert. Die App befindet sich zu diesem Zeitpunkt im Zustand <i>ClientStateIdle</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_start_screen.png" width="300" />
 <figcaption>Startscreen auf dem iPhone</figcaption>
@@ -2534,71 +2514,71 @@ typedef enum {
 </figure>
 
 <p>Im nächsten Schritt möchte der User sich zu einem neuen Planning Poker hinzufügen. Dabei hat er die Möglichkeit den Namen seines iPhones zu bestimmen. Standardmässig wird der Gerätenamen verwendet.</p>
-<figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<figure id="figure-iphone-joining-screen" class="inline">
+<img src="images/iphone_joining_screen.png" width="300" />
+<figcaption>Verbindungsscreen auf dem iPhone</figcaption>
 </figure>
 
 <p>Ist der User mit dem Namen zufrieden versucht er sich mit einem iPad zu verbinden. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>ClientStateLookingForServers</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<img src="images/iphone_connection_screen.png" width="300" />
+<figcaption>iPhone sucht nach einem iPad</figcaption>
 </figure>
 
 <p>Der Scrum Master startet ein neues Planning Poker auf dem iPad. Dabei wird ihm eine (leere)Tabelle präsentiert. Das iPad befindet sich nun im Verbindungsmodus und ist für die iPhones sichtbar. Alle iPhones, welche sich erfolgreich mit dem iPad verbunden haben, werden in dieser Tabelle dargestellt. Die App befindet sich im Status <i>ServerStateAcceptingConnections</i>.</p>
 <figure id="figure-start-screen-iphad" class="inline">
-<img src="images/ipad_start_screen.png" width="350" />
-<figcaption>Startscreen auf dem iPad</figcaption>
+<img src="images/ipad_connected_screen.png" width="350" />
+<figcaption>iPad wartet auf zusätzliche Teilnehmer</figcaption>
 </figure>
 
-<p>Das iPhone erhält ein Ereignis, welches ihm mitteilt, dass ein iPad gefunden worden ist. Das iPhone stellt nun eine Verbindung her. Die App befindet sich nun im Zustand <i>ClientStateConnecting</i>.<br />
+<p>Das iPhone erhält ein Ereignis, welches ihm mitteilt, dass ein iPad gefunden worden ist. Das iPhone stellt nun eine Verbindung her. Die App befindet sich im Zustand <i>ClientStateConnecting</i>.<br />
 Wurde eine erfolgreiche Verbindung mit dem iPad hergestellt erhält das iPhone wiederum ein Ereignis, welches die Verbindung zum iPad bestätigt. Dies führt zum Zustand <i>ClientStateConnected</i>. Nun wird auf ein SignIn-Request gewartet. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForSignIn</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<img src="images/iphone_connecting_screen.png" width="300" />
+<figcaption>iPhone wartet auf den SignIn-Request</figcaption>
 </figure>
 
 <h4>Planning Poker starten</h4>
 <p>Haben sich alle Teilnehmer mit dem iPad verbunden initiiert der Scrum Master das eigentlich Planning Poker. Das iPad ist ab diesem Zeitpunkt nicht mehr auffindbar und der Zustand wird auf <i>ServerStateStopAcceptingNewConnections</i> gesetzt.<br />
 Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>PlanningPokerDeckWaitingForSignIn</i>. Haben alle iPhone mit einer SignIn-Response geantwortet wird ein Ready-Kommando geschickt und folgendes UI angezeigt. Die App befindet sich nun im Zustand <i>PlanningPokerDeckWaitingForCardValues</i>. Das iPad ist nun bereit für ein Planning Poker.</p>
 <figure id="figure-start-screen-iphad" class="inline">
-<img src="images/ipad_start_screen.png" width="350" />
-<figcaption>Startscreen auf dem iPad</figcaption>
+<img src="images/ipad_table_screen.png" width="350" />
+<figcaption>Hauptscreen des iPads</figcaption>
 </figure>
 
 <p>Wie bereits erwähnt erhält das iPhone ein SignIn-Request vom iPad. Das iPhone antwortet mit einer SignIn-Response und geht in den Zustand <i>PlanningPokerCardsWaitingForReady</i> über. Danach wird vom iPad das erwähnte Ready-Kommando gesendet. Dies führt zum Zustand <i>PlanningPokerCardsChooseCardValue</i> und folgendes UI erscheint auf dem iPhone.</p>
 <figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<img src="images/iphone_choose_screen.png" width="300" />
+<figcaption>Teilnehmer kann eine Karte wählen</figcaption>
 </figure>
 
 <h4>Karte auswählen</h4>
-<p>Nun können die Teilnehmer eine Karte auf dem iPhone wählen. Der Wert der Karte wird dem iPad übertragen. Sollte sich ein Teilnehmer doch noch für eine andere Karte entscheiden kann er dies tun, solange noch nicht alle anderen Teilnehmer eine Karte ausgewählt haben. Dies ist der Grund wieso die App in diesem Schritt im Status <i>PlanningPokerCardsChooseCardValue</i> verbleibt.</p>
+<p>Nun können die Teilnehmer eine Karte auf dem iPhone wählen. Der Wert der Karte wird auf das iPad übertragen. Sollte sich ein Teilnehmer doch noch für eine andere Karte entscheiden kann er dies tun, solange noch nicht alle anderen Teilnehmer eine Karte ausgewählt haben. Dies ist der Grund wieso die App in diesem Schritt im Status <i>PlanningPokerCardsChooseCardValue</i> verbleibt.</p>
 <figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<img src="images/iphone_choosed_screen.png" width="300" />
+<figcaption>Teilnehmer hat eine Karte gewählt</figcaption>
 </figure>
 
-<p>Haben sich alle Teilnehmer für eine Karte entschieden geht die App in den Zustand <i>PlanningPokerDeckShowCardValues</i> über. und die Karten der einzelnen Teilnehmer werden auf dem iPad angezeigt. Den iPhones wird ebenfalls mitgeteilt, dass nun die Karten dargestellt werden.</p>
+<p>Haben sich alle Teilnehmer für eine Karte entschieden geht die App in den Zustand <i>PlanningPokerDeckShowCardValues</i> über und die Karten der einzelnen Teilnehmer werden auf dem iPad angezeigt. Den iPhones wird ebenfalls mitgeteilt, dass nun die Karten dargestellt werden.</p>
 <figure id="figure-start-screen-iphad" class="inline">
-<img src="images/ipad_start_screen.png" width="350" />
-<figcaption>Startscreen auf dem iPad</figcaption>
+<img src="images/ipad_choosen_screen.png" width="350" />
+<figcaption>Die Karten der Teilnehmer werden angezeigt</figcaption>
 </figure>
 
 <p>Sobald die Karten auf dem iPad dargestellt werden wird dies dem iPhone mitgeteilt. Das UI wird deaktiviert und eine Kartenauswahl ist für den Moment nicht möglich. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForNextRound</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
-<img src="images/iphone_start_screen.png" width="300" />
-<figcaption>Startscreen auf dem iPhone</figcaption>
+<img src="images/iphone_choosed_screen.png" width="300" />
+<figcaption>Keine Kartenwahl mehr möglich</figcaption>
 </figure>
 
 <h4>Neue Runde starten</h4>
-<p>Soll eine neue Runde gestartet werden schickt, dass iPad den iPhones ein entsprechendes Kommando. Die Kartenwerte auf dem iPad verschwinden und das UI auf dem iPhone wird wieder aktiviert. Das iPhone befindet sich wieder im Zustand <i>PlanningPokerDeckWaitingForCardValues</i> und die iPhones im Zustand <i>PlanningPokerCardsChooseCardValue</i>. Es darf eine neue Runde gespielt werden!</p>
+<p>Soll eine neue Runde gestartet werden schickt, dass iPad den iPhones ein entsprechendes Kommando. Die Kartenwerte auf dem iPad verschwinden und das UI auf dem iPhone wird wieder aktiviert. Das iPhone befindet sich wieder im Zustand <i>PlanningPokerDeckWaitingForCardValues</i> und die iPhones im Zustand <i>PlanningPokerCardsChooseCardValue</i>. Es darf eine neue Runde gespielt werden.</p>
 
 </div>
 
 <div class="chapter">
 <h2>Fazit</h2>
-<p>Es war sehr spannend eine so komplexe iOS App zu entwickeln. Was mich extrem freut, dass alle definierten Ziele erreichten worden sind:
+<p>Es war sehr spannend eine so komplexe iOS App zu entwickeln. Was mich extrem freut ist die Tatsache dass alle definierten Ziele erreichten worden sind:
 </p>
 <ul>
     <li>Definition der Anforderungen der zu entwickelnden iOS App</li>
@@ -2609,13 +2589,13 @@ Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt 
 
 <p>Das Requirements Engineering konnte gut und zügig durchgeführt werden. Es war sehr hilfreich, dass ich bereits die Vorlesung von Herrn Bachmann besucht habe, welche sich genau um diese Thematik dreht.</p>
 
-<p>Es gab im Internet leider nicht viele gute Quellen, dafür war aber die Dokumentation von Apple ausgezeichnet. Spannend war auch, dass Apple genau meine API aus GameKit herausgelöst hat mit iOS7. Dies wäre absolut auch ein Schritt gewesen, den ich als Apple durchgeführt hätte. Ich kann mir vorstellen, dass solche Apps in Zukunft immer beliebter werden und noch in einer grösseren Anzahl erscheinen.
+<p>Es gab im Internet leider nicht viele gute Quellen, dafür war aber die Dokumentation von Apple ausgezeichnet. Spannend war auch, dass Apple mit iOS7 genau die von mir verwendetet API aus GameKit herausgelöst hat. Dies wäre absolut auch ein Schritt gewesen, den ich als Apple durchgeführt hätte. Ich kann mir vorstellen, dass solche Apps in Zukunft immer beliebter werden und noch in einer grösseren Anzahl erscheinen.
 </p>
 
 <p>Das schreiben eines eigenen Netzwerkprotokolls war eine Herausforderung. Wir haben bisher im Studium wenig auf diesem Level gemacht, aber ich denke die erarbeitet Lösung hat die Anforderungen erfüllt. Sie ist auch einfach erweiterbar, was ein persönliches Ziel bei der Definition des Protokolls war. Es war sehr spannend mal wieder mit Bits, Bytes und Hex zu arbeiten.</p>
 
-<p>Das eine voll funktionsumfassende App entstanden ist, macht mich sehr stolz. Das Apple mit iOS7 ein flaches UI eingeführt hat, spielte mir mit meinen bescheidenen Designfähigkeiten in die Hände. Das sehr simple UI passt sehr gut zu iOS7 und erfüllt den Job.< br/>
-Der nächste Schritt wird sein die App in den AppStore zu stellen. Ich erhoffe mir, dass auch weitere Teams von dieser App profitieren können. In unserem Team wird die App bereits eingesetzt und hat uns das Leben vereinfacht.</p>
+<p>Das eine voll funktionsumfassende App entstanden ist, macht mich sehr stolz. Mit iOS7 wurd ein flaches UI eingeführt, war mir mit meinen bescheidenen Designfähigkeiten in die Hände spielte. Das sehr simple UI passt sehr gut zu iOS7 und erfüllt den Job.< br/>
+Der nächste Schritt nach der Abgabe der Semsterarbeit wird die App der Veröffentlichung der App im AppStore sein. Ich erhoffe mir, dass auch weitere Teams von dieser App profitieren können. In unserem Team wird die App bereits eingesetzt und hat uns das Leben vereinfacht.</p>
 
 <p>Insgesamt kann man sagen, dass die Semesterarbeit viel Spass und Schweiss bereitet hat. Der Aufwand der Dokumentation darf nie unterschätzt werden, was ich bei meiner nächsten Arbeit besser berücksichtigen werden. Ein gutes Projektmanagment fördert den reibungslosen Ablauf der Arbeit, was ich weiterhin so machen werden.</p>
 
