@@ -517,6 +517,10 @@ Cyril Gabathuler, <a href="mailto:cyril.gabathuler@icloud.com">cyril.gabathuler@
 </div>
 
 <div class="chapter">
+<h2>Zusammenfassung</h2>
+</div>
+
+<div class="chapter">
 <h2>Einleitung</h2>
 
 <h3>Ausgangslage</h3>
@@ -1212,7 +1216,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Beschreibung</th>
             <td>
-               Der Scrum Muster startet ein neues Planning Poker auf seinem iPad.
+               Der Scrum Master startet ein neues Planning Poker auf seinem iPad.
             </td>
         </tr>
         <tr>
@@ -1224,7 +1228,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Akzeptanz Tests</th>
             <td>
-                <a href="figure-acceptance-test-1">AT01: Starten einer Planning Session</a>
+                <a href="figure-acceptance-test-1">AT01: Starten eines Planning Pokers</a>
             </td>
         </tr>
         <tr>
@@ -1489,7 +1493,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Akzeptanz Tests</th>
             <td>
-                <a href="figure-acceptance-test-1">AT01: Starten einer Planning Session</a>
+                <a href="figure-acceptance-test-1">AT01: Starten eines Planning Pokers</a>
             </td>
         </tr>
         <tr>
@@ -1541,7 +1545,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Akzeptanz Tests</th>
             <td>
-                <a href="figure-acceptance-test-1">AT01: Starten einer Planning Session</a>
+                <a href="figure-acceptance-test-1">AT01: Starten eines Planning Pokers</a>
             </td>
         </tr>
         <tr>
@@ -1599,7 +1603,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Querbezug</th>
             <td>
-                Im Kapitel <a href="#chapter-3">Planning Poker</a> wird Bezug auf die <a href="#figure-kartendeck">Werte</a> der Karten genommen.
+                Im Kapitel <a href="#chapter-4">Planning Poker</a> wird Bezug auf die <a href="#figure-kartendeck">Werte</a> der Karten genommen.
             </td>
         </tr>
     </tbody>
@@ -1965,7 +1969,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3>Akzeptanz Testing</h3>
 <p>
-    Die Akzeptanz Test werden anhand der Requirements definiert und habe daher eine direkte Verbindung zu einem Requirement.
+    Die Akzeptanz Tests werden anhand der Requirements definiert und habe daher eine direkte Verbindung zu den Requirements.
 </p>
 
 <h4>Vorlage</h4>
@@ -1988,6 +1992,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Status</th>
             <td>Erfüllt oder nicht erfüllt</td>
+        </tr>
+        <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>Anforderungen, welche durche diese Akzeptanz Tests geprüft werden.</td>
         </tr>
         <tr>
             <th>Aktivität</th>
@@ -2022,11 +2030,15 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         </tr>
         <tr>
             <th>Name</th>
-            <td>Starten einer Planning Session</td>
+            <td>Starten eines Planning Pokers</td>
         </tr>
         <tr>
             <th>Status</th>
             <td></td>
+        </tr>
+        <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>R01, R06, R07</td>
         </tr>
         <tr>
             <th>Aktivität</th>
@@ -2070,6 +2082,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Status</th>
             <td></td>
+        </tr>
+        <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>R02</td>
         </tr>
         <tr>
             <th>Aktivität</th>
@@ -2116,6 +2132,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <td></td>
         </tr>
         <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>R09, R11, R12</td>
+        </tr>
+        <tr>
             <th>Aktivität</th>
             <td>Sobald alle zu verknüpfenden iPhones in der Listendarstellung des iPads erschienen sind, wird eine neue Session gestartet.</td>
         </tr>
@@ -2157,6 +2177,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Status</th>
             <td></td>
+        </tr>
+        <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>R04, R05, R08, R10</td>
         </tr>
         <tr>
             <th>Aktivität</th>
@@ -2202,6 +2226,10 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
             <td></td>
         </tr>
         <tr>
+            <th>Geprüpfte Anforderungen</th>
+            <td>R03</td>
+        </tr>
+        <tr>
             <th>Aktivität</th>
             <td>Solange noch nicht alle Entwickler sich für eine Karte entschieden haben, dürfen die Kartenwerte auf dem iPad nicht ersichtlich sein. Es sollen nun alle Entwickler eine Karte wählen</td>
         </tr>
@@ -2225,6 +2253,50 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     </tbody>
 </table>
 <figcaption>AT05: Karten aufdecken</figcaption>
+</figure>
+
+<h3>Übersicht Abnahme Akzeptanz Tests</h3>
+<figure id="figure-acceptance-test-check" class="inline">
+<table width="100%">
+    <colgroup>
+        <col width="10%" />
+        <col width="45%" />
+        <col width="45%" />
+    </colgroup>
+    <tbody>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th style="text-align: right">Erfüllt</th>
+        </tr>
+        <tr>
+            <td><a href="#figure-acceptance-test-1">AT01</a></td>
+            <td>Starten einer Planning Session</td>
+            <td style="text-align: right">✓</td>
+        </tr>
+        <tr>
+            <td><a href="#figure-acceptance-test-2">AT02</a></td>
+            <td>Anzeige verbundener iPhones</td>
+            <td style="text-align: right">✓</td>
+        </tr>
+        <tr>
+            <td><a href="#figure-acceptance-test-3">AT03</a></td>
+            <td>Erfolgreiche Verbindung</td>
+            <td style="text-align: right">✓</td>
+        </tr>
+        <tr>
+            <td><a href="#figure-acceptance-test-4">AT04</a></td>
+            <td>Auswählen einer Karte</td>
+            <td style="text-align: right">✓</td>
+        </tr>
+        <tr>
+            <td><a href="#figure-acceptance-test-5">AT05</a></td>
+            <td>Karten aufdecken</td>
+            <td style="text-align: right">✓</td>
+        </tr>
+    </tbody>
+</table>
+<figcaption>Übersicht der Akzeptanz Tests</figcaption>
 </figure>
 
 <h3 class="break">Unit Testing</h3>
@@ -2316,7 +2388,7 @@ sessionMode:(GKSessionMode)mode
 </pre>
 
 <p>
-    Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-8">Netzwerkverkehr</a> behandelt dieses Thema im Detail.<br />
+    Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-9">Netzwerkverkehr</a> behandelt dieses Thema im Detail.<br />
     Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung versichert, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
 <pre class="code">
 <code>
@@ -2390,19 +2462,129 @@ typedef enum {
     </li>
     <li>Der Payloadbereich beinhaltet die eigentlichen Daten. Meldet sich z.B. ein neues iPhone bei einem iPad an, würde im Payload der Name des iPhones zu finden sein.</li>
 </ul>
+
+<h3>Beispiel Paket</h3>
+
 </div>
 <div class="chapter">
 <h2>Umsetzung der iOS App</h2>
+<h3>Entwicklungsumgebung</h3>
 
-<p>
-    Aufbau
-</p>
-<h3>Verbindungsaufbau</h3>
-
-<figure id="figure-connections" class="inline">
-<img src="images/connections_ablauf.png" height="400" />
-<figcaption>Verbindungsaufbau</figcaption>
+<figure id="figure-workflow" class="inline">
+    <img src="images/workflow.png" width="300" />
+    <figcaption>Workflow iOS Entwicklung</figcaption>
 </figure>
+
+<h4>Xcode</h4>
+<p>
+    <a href="https://developer.apple.com/xcode/">Xcode</a> ist die von Apple angebotene IDE zur Entwicklung von iOS und Mac Applikationen. Xcode bietet Möglichkeiten die entwickelte App auf einem Simulator wie auch auf einem realen iOS Gerät zu testen. Als <a href="http://de.wikipedia.org/wiki/Versionsverwaltung">VCS</a> unterstützt Xcode Git und SVN, wobei in diesem Projekt Git verwendet wird (Schritt 1).
+</p>
+
+<h4>GitHub</h4>
+<p>
+    Der Source-Code wird auf <a href="https://github.com">GitHub</a> in einem öffentlichen <a href="https://github.com/gabac/iPlanningPoker-doc">Repository</a> gehalten. Jenkins wird informiert sobald ein neuer Change gepusht worden ist (Schritt 2).
+</p>
+
+<h4>Jenkins CI</h4>
+<p>
+    <a href="http://jenkins-ci.org">Jenkins</a> wird verwendet um die App kontinuierlich zu bauen. Wurde ein Change auf Github veröffentlicht wird ein Jenkins Job durchloffen. Der Job besteht aus zwei Teilen. Zuerst werden die Unittests angestossen. Sind alle Unittests erfolgreich ausgeführt worden wird das Artefakt gebildet. Das Artefakt ist ein IPA File, welches sich auf iOS Geräten installieren lässt (Schritt 3).
+</p>
+
+
+<h3>Sequenzdiagramm / Zustandsmaschine</h3>
+
+<p>Nachfolgend wird ein typischer Ablauf innerhalb der App durch ein Sequenzdiagramm dargestellt. Die App wurde mit Hilfe einer <a href="http://de.wikipedia.org/wiki/Endlicher_Automat">Zustandsmaschine</a> entwickelt. Entsprechend wurden im Sequenzdiagramm die verschiedenen Zustände erwähnt.</p>
+
+<p>Die App enthält zwei verschiedene Typen von Zustandsmaschinen. Für den ersten Teil der App, den eigentlichen Verbindungsaufbau, wird eine <a href="http://en.wikipedia.org/wiki/Event-driven_finite-state_machine">Ereignisgetriebene-Zustandsmaschine</a> verwendet. Im zweiten Teil, der Kommunikation zwischen den Clients und dem Server, wird eine klassische Zustandsmaschine verwendet.</p>
+
+<figure id="figure-sequenz" class="inline">
+<img src="images/ablaufdiagramm.png" width="600" />
+<figcaption>Sequenzdiagramm</figcaption>
+</figure>
+
+<p>Die einzelnen Schritte der App werden nun durchgeangen und die verschiedenen Zustände detailiert erklärt.</p>
+
+<h4>Verbindungsaufbau</h4>
+<p>Wird die App auf dem iPhone wird dem User folgender Screen präsentiert. Die App befindet sich zu diesem Zeitpunkt im Zustand <i>ClientStateIdle</i>.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<p>Die iPad App verhält sich sehr ähnlich. Dem User wird ebenfalls einen Startscreen präsentiert. Die App auf dem iPad befindet sich im Zustand <i>ServerStateIdle</i>.</p>
+<figure id="figure-start-screen-iphad" class="inline">
+<img src="images/ipad_start_screen.png" width="350" />
+<figcaption>Startscreen auf dem iPad</figcaption>
+</figure>
+
+<p>Im nächsten Schritt möchte der User sich zu einem neuen Planning Poker hinzufügen. Dabei hat er die Möglichkeit den Namen seines iPhones zu bestimmen. Standardmässig wird der Gerätenamen verwendet.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<p>Ist der User mit dem Namen zufrieden versucht er sich mit einem iPad zu verbinden. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>ClientStateLookingForServers</i>.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<p>Der Scrum Master startet ein neues Planning Poker auf dem iPad. Dabei wird ihm eine (leere)Tabelle präsentiert. Das iPad befindet sich nun im Verbindungsmodus und ist für die iPhones sichtbar. Alle iPhones, welche sich erfolgreich mit dem iPad verbunden haben, werden in dieser Tabelle dargestellt. Die App befindet sich im Status <i>ServerStateAcceptingConnections</i>.</p>
+<figure id="figure-start-screen-iphad" class="inline">
+<img src="images/ipad_start_screen.png" width="350" />
+<figcaption>Startscreen auf dem iPad</figcaption>
+</figure>
+
+<p>Das iPhone erhält ein Ereignis, welches ihm mitteilt, dass ein iPad gefunden worden ist. Das iPhone stellt nun eine Verbindung her. Die App befindet sich nun im Zustand <i>ClientStateConnecting</i>.<br />
+Wurde eine erfolgreiche Verbindung mit dem iPad hergestellt erhält das iPhone wiederum ein Ereignis, welches die Verbindung zum iPad bestätigt. Dies führt zum Zustand <i>ClientStateConnected</i>. Nun wird auf ein SignIn-Request gewartet. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForSignIn</i>.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<h4>Planning Poker starten</h4>
+<p>Haben sich alle Teilnehmer mit dem iPad verbunden initiiert der Scrum Master das eigentlich Planning Poker. Das iPad ist ab diesem Zeitpunkt nicht mehr auffindbar und der Zustand wird auf <i>ServerStateStopAcceptingNewConnections</i> gesetzt.<br />
+Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>PlanningPokerDeckWaitingForSignIn</i>. Haben alle iPhone mit einer SignIn-Response geantwortet wird ein Ready-Kommando geschickt und folgendes UI angezeigt. Die App befindet sich nun im Zustand <i>PlanningPokerDeckWaitingForCardValues</i>. Das iPad ist nun bereit für ein Planning Poker.</p>
+<figure id="figure-start-screen-iphad" class="inline">
+<img src="images/ipad_start_screen.png" width="350" />
+<figcaption>Startscreen auf dem iPad</figcaption>
+</figure>
+
+<p>Wie bereits erwähnt erhält das iPhone ein SignIn-Request vom iPad. Das iPhone antwortet mit einer SignIn-Response und geht in den Zustand <i>PlanningPokerCardsWaitingForReady</i> über. Danach wird vom iPad das erwähnte Ready-Kommando gesendet. Dies führt zum Zustand <i>PlanningPokerCardsChooseCardValue</i> und folgendes UI erscheint auf dem iPhone.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<h4>Karte auswählen</h4>
+<p>Nun können die Teilnehmer eine Karte auf dem iPhone wählen. Der Wert der Karte wird dem iPad übertragen. Sollte sich ein Teilnehmer doch noch für eine andere Karte entscheiden kann er dies tun, solange noch nicht alle anderen Teilnehmer eine Karte ausgewählt haben. Dies ist der Grund wieso die App in diesem Schritt im Status <i>PlanningPokerCardsChooseCardValue</i> verbleibt.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<p>Haben sich alle Teilnehmer für eine Karte entschieden geht die App in den Zustand <i>PlanningPokerDeckShowCardValues</i> über. und die Karten der einzelnen Teilnehmer werden auf dem iPad angezeigt. Den iPhones wird ebenfalls mitgeteilt, dass nun die Karten dargestellt werden.</p>
+<figure id="figure-start-screen-iphad" class="inline">
+<img src="images/ipad_start_screen.png" width="350" />
+<figcaption>Startscreen auf dem iPad</figcaption>
+</figure>
+
+<p>Sobald die Karten auf dem iPad dargestellt werden wird dies dem iPhone mitgeteilt. Das UI wird deaktiviert und eine Kartenauswahl ist für den Moment nicht möglich. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForNextRound</i>.</p>
+<figure id="figure-start-screen-iphone" class="inline">
+<img src="images/iphone_start_screen.png" width="300" />
+<figcaption>Startscreen auf dem iPhone</figcaption>
+</figure>
+
+<h4>Neue Runde starten</h4>
+<p>Soll eine neue Runde gestartet werden schickt, dass iPad den iPhones ein entsprechendes Kommando. Die Kartenwerte auf dem iPad verschwinden und das UI auf dem iPhone wird wieder aktiviert. Das iPhone befindet sich wieder im Zustand <i>PlanningPokerDeckWaitingForCardValues</i> und die iPhones im Zustand <i>PlanningPokerCardsChooseCardValue</i>. Es darf eine neue Runde gespielt werden!</p>
+
+</div>
+
+<div class="chapter">
+<h2>Fazit</h2>
+<p>
+    Fazit
+</p>
 </div>
 
 
@@ -2435,6 +2617,13 @@ Byte: Ein Byte besteht aus 8 Bit. Es ist eine Masseinheit in der Informatik
 <p>
 Hexadezimalsystem: Dieses Stellwertsystem wird zur Basis 16 dargestellt. Im Unteschied zum Dezimalsystem, welches zur Basis 10 dargestellt wird.
 </p>
+svn
+git
+artefakt
+
+<h3 class="break">Literaturverzeichnis</h3>
+<p>Stephen G. Kochan: Programming in Objective-C 2.0(5. Auflage), 2013, 978-0321887283, Amsterdam: Addison-Wesley Longman</p>
+<p>Ken Schwaber, Mike Beedle: Agile Software Development with Scrum, 978-0130676344</p>
 
 <h3 class="break">Quellenverzeichnis</h3>
 
