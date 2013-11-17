@@ -2473,17 +2473,17 @@ typedef enum {
 
 <h4>Xcode</h4>
 <p>
-    <a href="https://developer.apple.com/xcode/">Xcode</a> ist die von Apple angebotene IDE zur Entwicklung von iOS und Mac Applikationen. Xcode bietet Möglichkeiten die entwickelte App auf einem Simulator wie auch auf einem realen iOS Gerät zu testen. Als <a href="http://de.wikipedia.org/wiki/Versionsverwaltung">VCS</a> unterstützt Xcode Git und SVN, wobei in diesem Projekt Git verwendet wird (Schritt 1).
+    <a href="https://developer.apple.com/xcode/">Xcode</a> ist die von Apple angebotene IDE zur Entwicklung von iOS und Mac Applikationen. Xcode bietet Möglichkeiten, die entwickelte App auf einem Simulator wie auch auf einem realen iOS Gerät zu testen. Als <a href="http://de.wikipedia.org/wiki/Versionsverwaltung">VCS</a> unterstützt Xcode Git und SVN. In diesem Projekt wird Git verwendet (Schritt 1).
 </p>
 
 <h4>GitHub</h4>
 <p>
-    Der Source-Code wird auf <a href="https://github.com">GitHub</a> in einem öffentlichen <a href="https://github.com/gabac/iPlanningPoker-doc">Repository</a> gehalten. Jenkins wird informiert sobald ein neuer Change gepusht worden ist (Schritt 2).
+    Der Source-Code wird auf <a href="https://github.com">GitHub</a> in einem öffentlichen <a href="https://github.com/gabac/iPlanningPoker-doc">Repository</a> gehalten. Jenkins wird informiert, sobald ein neuer Change gepusht worden ist (Schritt 2).
 </p>
 
 <h4>Jenkins CI</h4>
 <p>
-    <a href="http://jenkins-ci.org">Jenkins</a> wird verwendet um die App kontinuierlich zu bauen. Wurde ein Change auf Github veröffentlicht wird ein Jenkins Job durchloffen. Der Job besteht aus zwei Teilen. Zuerst werden die Unittests angestossen. Sind alle Unittests erfolgreich ausgeführt worden wird das Artefakt gebildet. Das Artefakt ist ein IPA File, welches sich auf iOS Geräten installieren lässt (Schritt 3).
+    <a href="http://jenkins-ci.org">Jenkins</a> wird verwendet, um die App kontinuierlich zu bauen. Wurde ein Change auf Github veröffentlicht, wird ein Jenkins Job durchloffen. Der Job besteht aus zwei Teilen. Zuerst werden die Unittests angestossen. Sind alle Unittests erfolgreich ausgeführt worden, wird das Artefakt gebildet. Das Artefakt ist ein IPA File, welches sich auf iOS Geräten installieren lässt (Schritt 3).
 </p>
 
 
@@ -2498,28 +2498,28 @@ typedef enum {
 <figcaption>Sequenzdiagramm</figcaption>
 </figure>
 
-<p>Die einzelnen Schritte der App werden nun durchgegangen und die verschiedenen Zustände detailiert erklärt.</p>
+<p>Die einzelnen Schritte der App werden nachfolgend erläutert und die verschiedenen Zustände detailliert erklärt.</p>
 
 <h4>Verbindungsaufbau</h4>
-<p>Öffnet man die App auf dem iPhone wird dem User folgender Screen präsentiert. Die App befindet sich zu diesem Zeitpunkt im Zustand <i>ClientStateIdle</i>.</p>
+<p>Öffnet man die App auf dem iPhone, wird dem User folgender Screen präsentiert. Die App befindet sich zu diesem Zeitpunkt im Zustand <i>ClientStateIdle</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_start_screen.png" width="300" />
 <figcaption>Startscreen auf dem iPhone</figcaption>
 </figure>
 
-<p>Die iPad App verhält sich sehr ähnlich. Dem User wird ebenfalls einen Startscreen präsentiert. Die App auf dem iPad befindet sich im Zustand <i>ServerStateIdle</i>.</p>
+<p>Die iPad App verhält sich sehr ähnlich. Dem User wird ebenfalls ein Startscreen präsentiert. Die App auf dem iPad befindet sich im Zustand <i>ServerStateIdle</i>.</p>
 <figure id="figure-start-screen-iphad" class="inline">
 <img src="images/ipad_start_screen.png" width="350" />
 <figcaption>Startscreen auf dem iPad</figcaption>
 </figure>
 
-<p>Im nächsten Schritt möchte der User sich zu einem neuen Planning Poker hinzufügen. Dabei hat er die Möglichkeit den Namen seines iPhones zu bestimmen. Standardmässig wird der Gerätenamen verwendet.</p>
+<p>Im nächsten Schritt möchte sich der User zu einem neuen Planning Poker hinzufügen. Dabei hat er die Möglichkeit, den Namen seines iPhones zu bestimmen. Standardmässig wird der Gerätename verwendet.</p>
 <figure id="figure-iphone-joining-screen" class="inline">
 <img src="images/iphone_joining_screen.png" width="300" />
 <figcaption>Verbindungsscreen auf dem iPhone</figcaption>
 </figure>
 
-<p>Ist der User mit dem Namen zufrieden versucht er sich mit einem iPad zu verbinden. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>ClientStateLookingForServers</i>.</p>
+<p>Ist der User mit dem Namen zufrieden, versucht sich die App mit einem iPad zu verbinden. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>ClientStateLookingForServers</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_connection_screen.png" width="300" />
 <figcaption>iPhone sucht nach einem iPad</figcaption>
@@ -2532,47 +2532,47 @@ typedef enum {
 </figure>
 
 <p>Das iPhone erhält ein Ereignis, welches ihm mitteilt, dass ein iPad gefunden worden ist. Das iPhone stellt nun eine Verbindung her. Die App befindet sich im Zustand <i>ClientStateConnecting</i>.<br />
-Wurde eine erfolgreiche Verbindung mit dem iPad hergestellt erhält das iPhone wiederum ein Ereignis, welches die Verbindung zum iPad bestätigt. Dies führt zum Zustand <i>ClientStateConnected</i>. Nun wird auf ein SignIn-Request gewartet. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForSignIn</i>.</p>
+Wurde eine erfolgreiche Verbindung mit dem iPad hergestellt, erhält das iPhone wiederum ein Ereignis, welches die Verbindung zum iPad bestätigt. Dies führt zum Zustand <i>ClientStateConnected</i>. Nun wird auf ein SignIn-Request gewartet. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForSignIn</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_connecting_screen.png" width="300" />
 <figcaption>iPhone wartet auf den SignIn-Request</figcaption>
 </figure>
 
 <h4>Planning Poker starten</h4>
-<p>Haben sich alle Teilnehmer mit dem iPad verbunden initiiert der Scrum Master das eigentlich Planning Poker. Das iPad ist ab diesem Zeitpunkt nicht mehr auffindbar und der Zustand wird auf <i>ServerStateStopAcceptingNewConnections</i> gesetzt.<br />
-Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>PlanningPokerDeckWaitingForSignIn</i>. Haben alle iPhone mit einer SignIn-Response geantwortet wird ein Ready-Kommando geschickt und folgendes UI angezeigt. Die App befindet sich nun im Zustand <i>PlanningPokerDeckWaitingForCardValues</i>. Das iPad ist nun bereit für ein Planning Poker.</p>
+<p>Haben sich alle Teilnehmer mit dem iPad verbunden, initiiert der Scrum Master das eigentliche Planning Poker. Das iPad ist ab diesem Zeitpunkt nicht mehr auffindbar und der Zustand wird auf <i>ServerStateStopAcceptingNewConnections</i> gesetzt.<br />
+Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt befindet sich die App im Zustand <i>PlanningPokerDeckWaitingForSignIn</i>. Haben alle iPhones mit einer SignIn-Response geantwortet, wird ein Ready-Kommando geschickt und folgendes UI angezeigt. Die App befindet sich nun im Zustand <i>PlanningPokerDeckWaitingForCardValues</i>. Das iPad ist nun bereit für ein Planning Poker.</p>
 <figure id="figure-start-screen-iphad" class="inline">
 <img src="images/ipad_table_screen.png" width="350" />
 <figcaption>Hauptscreen des iPads</figcaption>
 </figure>
 
-<p>Wie bereits erwähnt erhält das iPhone ein SignIn-Request vom iPad. Das iPhone antwortet mit einer SignIn-Response und geht in den Zustand <i>PlanningPokerCardsWaitingForReady</i> über. Danach wird vom iPad das erwähnte Ready-Kommando gesendet. Dies führt zum Zustand <i>PlanningPokerCardsChooseCardValue</i> und folgendes UI erscheint auf dem iPhone.</p>
+<p>Wie bereits erwähnt, erhält das iPhone ein SignIn-Request vom iPad. Das iPhone antwortet mit einer SignIn-Response und geht in den Zustand <i>PlanningPokerCardsWaitingForReady</i> über. Danach wird vom iPad das erwähnte Ready-Kommando gesendet. Dies führt zum Zustand <i>PlanningPokerCardsChooseCardValue</i> und folgendes UI erscheint auf dem iPhone.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_choose_screen.png" width="300" />
 <figcaption>Teilnehmer kann eine Karte wählen</figcaption>
 </figure>
 
 <h4>Karte auswählen</h4>
-<p>Nun können die Teilnehmer eine Karte auf dem iPhone wählen. Der Wert der Karte wird auf das iPad übertragen. Sollte sich ein Teilnehmer doch noch für eine andere Karte entscheiden kann er dies tun, solange noch nicht alle anderen Teilnehmer eine Karte ausgewählt haben. Dies ist der Grund wieso die App in diesem Schritt im Status <i>PlanningPokerCardsChooseCardValue</i> verbleibt.</p>
+<p>Nun können die Teilnehmer eine Karte auf dem iPhone wählen. Der Wert der Karte wird auf das iPad übertragen. Sollte sich ein Teilnehmer doch noch für eine andere Karte entscheiden, kann er dies tun, solange noch nicht alle anderen Teilnehmer eine Karte ausgewählt haben. Dies ist der Grund, wieso die App in diesem Schritt im Status <i>PlanningPokerCardsChooseCardValue</i> verbleibt.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_choosed_screen.png" width="300" />
 <figcaption>Teilnehmer hat eine Karte gewählt</figcaption>
 </figure>
 
-<p>Haben sich alle Teilnehmer für eine Karte entschieden geht die App in den Zustand <i>PlanningPokerDeckShowCardValues</i> über und die Karten der einzelnen Teilnehmer werden auf dem iPad angezeigt. Den iPhones wird ebenfalls mitgeteilt, dass nun die Karten dargestellt werden.</p>
+<p>Haben sich alle Teilnehmer für eine Karte entschieden, geht die App in den Zustand <i>PlanningPokerDeckShowCardValues</i> über und die Karten der einzelnen Teilnehmer werden auf dem iPad angezeigt. Den iPhones wird ebenfalls mitgeteilt, dass nun die Karten dargestellt werden.</p>
 <figure id="figure-start-screen-iphad" class="inline">
 <img src="images/ipad_choosen_screen.png" width="350" />
 <figcaption>Die Karten der Teilnehmer werden angezeigt</figcaption>
 </figure>
 
-<p>Sobald die Karten auf dem iPad dargestellt werden wird dies dem iPhone mitgeteilt. Das UI wird deaktiviert und eine Kartenauswahl ist für den Moment nicht möglich. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForNextRound</i>.</p>
+<p>Sobald die Karten auf dem iPad dargestellt werden, wird dies dem iPhone mitgeteilt. Das UI wird deaktiviert und eine Kartenauswahl ist für den Moment nicht mehr möglich. Die App befindet sich im Zustand <i>PlanningPokerCardsWaitingForNextRound</i>.</p>
 <figure id="figure-start-screen-iphone" class="inline">
 <img src="images/iphone_choosed_screen.png" width="300" />
 <figcaption>Keine Kartenwahl mehr möglich</figcaption>
 </figure>
 
 <h4>Neue Runde starten</h4>
-<p>Soll eine neue Runde gestartet werden schickt, dass iPad den iPhones ein entsprechendes Kommando. Die Kartenwerte auf dem iPad verschwinden und das UI auf dem iPhone wird wieder aktiviert. Das iPhone befindet sich wieder im Zustand <i>PlanningPokerDeckWaitingForCardValues</i> und die iPhones im Zustand <i>PlanningPokerCardsChooseCardValue</i>. Es darf eine neue Runde gespielt werden.</p>
+<p>Soll eine neue Runde gestartet werden, schickt das iPad den iPhones ein entsprechendes Kommando. Die Kartenwerte auf dem iPad verschwinden und das UI auf dem iPhone wird wieder aktiviert. Das iPhone befindet sich wieder im Zustand <i>PlanningPokerDeckWaitingForCardValues</i> und die iPhones im Zustand <i>PlanningPokerCardsChooseCardValue</i>. Es kann eine neue Runde gespielt werden.</p>
 
 </div>
 
