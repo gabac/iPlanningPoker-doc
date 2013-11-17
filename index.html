@@ -2313,14 +2313,14 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <div class="chapter">
 <h2>Analyse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entwickelt worden sind. Diese API's bieten unter anderem die Möglichkeiten für eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a>, die für Spielentwickler entworfen worden ist. Diese API's bieten unter anderem die Möglichkeit, eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant, an. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
 </p>
-<p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 begonnen hat. Eine Migration zum neuen Framework hin ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
+<p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 begonnen hat. Eine Migration auf das neue Framework ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
-<p class="break">Der wichtigste Punkt wieso dieses Framework gewählt worden ist, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN mit einander verbinden. Auch das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für genau diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
+<p class="break">Der wichtigste Punkt weshalb dieses Framework gewählt wurde, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN miteinander verbinden. Das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
 <figure id="figure-bonjour" class="inline">
 <img src="images/bonjour_overview.png" width="400" />
@@ -2329,7 +2329,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3 class="break">GKSession und GKSessionDelegate</h3>
 <p>
-    Um die Klasse GKSession zu instanzieren ist es notwendig sich für einen Modus zu entscheiden. Dieser bestimmt wie sich die Klasse verhalten soll. Zur Verfügung stehen drei verschiedene <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html#//apple_ref/c/econst/GKSessionModeServer">Modi</a>.
+    Um die Klasse GKSession zu instanzieren ist es notwendig, sich für einen Modus zu entscheiden. Dieser bestimmt wie sich die Klasse verhalten soll. Zur Verfügung stehen drei verschiedene <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html#//apple_ref/c/econst/GKSessionModeServer">Modi</a>.
 </p>
 
 <pre class="code">
@@ -2341,33 +2341,33 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     } GKSessionMode;</code>
 </pre>
 
-<p>Die Werte <i>GKSessionModeClient</i> und <i>GKSessionModeServer</i> stehen für eine Client Server Verbindung. Eine Client Server Verbindung unterhält nur Verbidungen zwischen den Clients und dem Server</p>
+<p>Die Werte <i>GKSessionModeClient</i> und <i>GKSessionModeServer</i> stehen für eine Client Server Verbindung. Eine Client Server Verbindung unterhält nur Verbidungen zwischen den Clients und dem Server.</p>
 <figure id="figure-client-server" class="inline">
 <img src="images/server_client.png" width="400" />
 <figcaption>Client Server Verbindungen</figcaption>
 </figure>
 
-<p>Im Gegensatz dazu steht die Peer-to-Peer Verbindung(<i>GKSessionModePeer</i>), in welcher alle beteiligten Endgeräte miteinander kommunizieren.</p>
+<p>Im Gegensatz dazu steht die Peer-to-Peer Verbindung(<i>GKSessionModePeer</i>), bei welcher alle beteiligten Endgeräte miteinander kommunizieren.</p>
 <figure id="figure-peer-to-peer" class="inline">
 <img src="images/peer_to_peer.png" width="400" />
 <figcaption>Peer-to-Peer Verbindungen</figcaption>
 </figure>
 
-<p>Um die Programmierung zu vereinfachen wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
+<p>Da iPlanningPoker in einem Client-Server Modus funktioniert, wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
 
-<p class="break">Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert um auf Events reagieren zu können. Typische Events sind:</p>
+<p class="break">Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert, um auf Events reagieren zu können. Typische Events sind:</p>
 <ul>
-    <li>Veränderungen an den verbundenen Clients z.B. wenn ein iPhone die Verbindung unterbricht.</li>
+    <li>Veränderungen an den verbundenen Clients z.B. wenn ein iPhone die Verbindung unterbricht</li>
     <li>Verbindungsaufbau mit einem Server</li>
     <li>Allfällige Kommunikationsfehler</li>
 </ul>
 
 <h3>Typische Methoden</h3>
 
-<p>Der Abschnitt behandelt die wichtigsten Methoden der GameKit API, welche in diesem Projekt verwendet worden sind. Um eine vollständige Übersicht zu erhalten, empfiehlt sich die <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">Dokumentation</a> von Apple selbst.</p>
+<p>Der Abschnitt behandelt die wichtigsten Methoden der GameKit API, welche in diesem Projekt verwendet worden sind. Um eine vollständige Übersicht zu erhalten, empfiehlt sich die <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">Dokumentation</a> von Apple.</p>
 
 <h4>Client</h4>
-<p>Diese Instanzmethode wird verwendet um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Clients mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
+<p>Diese Instanzmethode wird verwendet, um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Clients mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
 <pre class="code">
 <code>
 - (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
@@ -2384,7 +2384,7 @@ sessionMode:(GKSessionMode)mode</code>
 
 <p>
     Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-9">Netzwerkverkehr</a> behandelt dieses Thema im Detail.<br />
-    Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung versichert, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
+    Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung gewährleistet, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
 <pre class="code">
 <code>
 - (BOOL)sendData:(NSData *)data toPeers:(NSArray *)peers
@@ -2402,7 +2402,7 @@ sessionMode:(GKSessionMode)mode</code>
 </pre>
 
 <p>
-    Um Daten an alle Clients zu senden wird eine unterschiedliche Methode verwendet. Diese Methode erlaubt es Daten an alle verbundenen Clients zu senden.
+    Um Daten an alle Clients zu senden, wird eine unterschiedliche Methode verwendet. Diese Methode erlaubt es, Daten an alle verbundenen Clients zu senden.
 </p>
 <pre class="code">
 <code>
