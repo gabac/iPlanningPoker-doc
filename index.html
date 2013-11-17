@@ -2415,12 +2415,12 @@ error:(NSError **)error</code>
 <div class="chapter">
 <h2>Netzwerkverkehr</h2>
 <p>
-    Die Kommunikation zwischen den verschiedenen iPhones und dem iPad ist klar strukturiert. Die Daten werden in sogenannten Paketen zwischen dem Server und den Clients ausgetauscht. Diese Pakete haben einen klar strukturierten Header auf welchen nun näher eingegangen wird.
+    Die Kommunikation zwischen den verschiedenen iPhones und dem iPad ist klar strukturiert. Die Daten werden in sogenannten Paketen zwischen dem Server und den Clients ausgetauscht. Diese Pakete haben einen klar strukturierten Header, auf welchen nun näher eingegangen wird.
 </p>
 
 <h3>Paket Struktur</h3>
 
-<p>Ein typischer Header in der App besteht aus 10 Bytes gefolgt von dem Payload, den eigentlichen Daten.</p>
+<p>Ein typischer Header in der App besteht aus 10 Bytes, gefolgt von dem Payload, den eigentlichen Daten.</p>
 
 <figure id="figure-packet" class="inline">
 <img src="images/packet.png" width="500" />
@@ -2436,9 +2436,9 @@ error:(NSError **)error</code>
         </pre>
     </li>
     <li>
-        Die nächsten 4 Bytes werden für die Nummerierung der Pakete verwendet. Nummeriert werden die Pakete um sicherzustellen, dass sie in der richtigen Reihenfolge verarbeitet werden.
+        Die nächsten 4 Bytes werden für die Nummerierung der Pakete verwendet. Nummeriert werden die Pakete, um sicherzustellen, dass sie in der richtigen Reihenfolge verarbeitet werden.
     </li>
-    <li>Die letzten 2 Bytes stehen für den Pakettyp. Je nach Typ reagiert die App anders auf die gesendeten Daten. Die Typen werden in einem Enum gehalten.
+    <li>Die letzten 2 Bytes stehen für den Pakettyp. Je nach Typ reagiert die App unterschiedlich auf die gesendeten Daten. Die Typen werden in einem Enum gehalten.
         <pre class="code">
         <code>
 typedef enum {
@@ -2450,7 +2450,7 @@ typedef enum {
 } DataPacketType;</code>
         </pre>
     </li>
-    <li>Der Payloadbereich beinhaltet die eigentlichen Daten. Meldet sich z.B. ein neues iPhone bei einem iPad an, würde im Payload der Name des iPhones zu finden sein.</li>
+    <li>Der Payloadbereich beinhaltet die eigentlichen Daten. Meldet sich z.B. ein neues iPhone bei einem iPad an, wäre im Payload der Name des iPhones zu finden.</li>
 </ul>
 
 <h3>Beispiel Paket</h3>
