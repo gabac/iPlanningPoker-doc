@@ -547,7 +547,7 @@ Es soll eine universelle App entwickelt werden. Dies erlaubt es, die App sowohl 
 </p>
 
 <p>
-Das vorrangige Ziel ist es, mit der App eine unkomplizierte Verbindung und Kommunikation zwischen mehreren mobile Geräten erfolgreich herzustellen.
+Das vorrangige Ziel ist es, mit der App unkomplizierte eine Verbindung sowie die Kommunikation zwischen mehreren mobile Geräten erfolgreich herzustellen.
 </p>
 
 <p>
@@ -1058,13 +1058,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>Planning Poker ist ein Schätzverfahren, welches in der agilen Projektmethode Scrum zum Einsatz kommt.</p>
 
 <p>Mit Hilfe von Planning Poker wird die Komplexität von User Stories (Requirements) geschätzt. Das Schätzen
-    wird mit Hilfe von Spielkarten realisiert. Diese lehnen sich typischerweise an die Werte der Fibonacci Reihe:
+    wird mit Hilfe von Spielkarten realisiert. Diese lehnen sich typischerweise an die Werte der Fibonacci-Folge an:
     1, 2, 3, 5, 8, 13, 20, 40, 100. Optional gibt es noch Karten mit dem Wert 0, einem Fragezeichen (unsicher)
-    und einer Kaffeetasse (Pause). Die Fibonacci Reihe wurde gewählt, um aufzuzeigen, dass komplexe User Stories schwieriger zu schätzen sind. Dies führt zu einer ungenaueren Schätzung.</p>
+    und einer Kaffeetasse (Pause). Die Fibonacci-Folge wurde gewählt, um aufzuzeigen, dass komplexe User Stories schwieriger zu schätzen sind. Dies führt zu einer ungenaueren Schätzung.</p>
 
 <p>Das Prinzip ist simpel. Jede User Story wird besprochen und offene Fragen werden untereinander geklärt.
     Sind keine weiteren Fragen mehr vorhanden, entscheidet sich jeder Entwickler, verdeckt, für eine
-    Spielkarte. Haben sich alle Teilnehmer für eine Karte entschieden, werden diese gemeinsam aufgedeckt.
+    Spielkarte. Haben sich alle Teilnehmer für eine Karte entschieden, werden die Karten gemeinsam aufgedeckt.
     Durch die verdeckte Karte wird der Einfluss von anderen Teilnehmer minimiert und es muss eine eigene
     Entscheidung gefällt werden.</p>
     
@@ -1081,7 +1081,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>
     Das UI der App soll minimalistisch gehalten werden. 
     Die wichtigsten Funktionalitäten der App sind der einfache Verbindungsaufbau zwischen den iPhones und dem iPad,
-    das einfache Auswählen eines Kartenwertes und die Darstellung der gewählten Werte auf dem iPad.
+    das einfache Auswählen eines Kartenwertes auf dem iPhone und die Darstellung der gewählten Werte auf dem iPad.
 </p>
 <p>
     Es wurde ein Mockup erstellt, um die Vision klarer darzustellen.
@@ -1094,7 +1094,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <p class="break">
     Um es für den User einfach zu halten wird eine universelle App erstellt. Dies bedeutet, die App kann sowohl auf
-    dem iPhone, wie auch auf dem iPad ausgeführt werden. Es wird dynamisch entschieden, welche Inhalte auf welchem
+    dem iPhone wie auch auf dem iPad ausgeführt werden. Es wird dynamisch entschieden, welche Inhalte auf welchem
     Gerät angezeigt werden sollen.
 </p>
 
@@ -1888,7 +1888,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Beschreibung</th>
             <td>
-              Die Teilnhemer, wie auch deren Karten, sollen auf dem iPad mittels einem Pokertisch dargestellt werden
+              Die Teilnehmer, wie auch deren Karten, sollen auf dem iPad mittels einem Pokertisch dargestellt werden
             </td>
         </tr>
         <tr>
@@ -1921,27 +1921,27 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3>Systemumfeld (System- und Kontextabgrenzung)</h3>
 <p>
-    Das System besteht aus einer iOS App, welche sowohl auf einem iPhone wie auch auf einem iPad installiert werden kann. Je nach Kontext erfüllt die App andere Aufgaben bzw. wird von einer anderen Zielperson verwendet. Die iPhones und das iPad kommunizieren drahtlos miteinander
+    Das System besteht aus einer iOS App, welche sowohl auf einem iPhone wie auch auf einem iPad installiert werden kann. Je nach Kontext erfüllt die App andere Aufgaben bzw. wird von einer anderen Zielperson verwendet. Die iPhones und das iPad kommunizieren drahtlos miteinander.
 </p>
 <figure id="figure-systemabgrenzung" class="inline">
     <img src="images/systemabgrenzung.png" />
     <figcaption>System- und Kontextabgrenzung</figcaption>
 </figure>
 
-<h3 class="break">Prozesse Systemkontext "Verbindungsaufbau"</h3>
+<h3 class="break">Prozess Systemkontext "Verbindungsaufbau"</h3>
 <ol>
-    <li>Der Scrum Master startet die App auf dem iPad und versetzt das iPad in den "Verbindungsmodus"</li>
-    <li>Das iPad sucht nach iPhones, welche sich mit einem iPad verbinden möchten</li>
-    <li>Der Teilnehmer startet die App auf dem iPhone und sucht nach einem iPad. Sobald ein iPad gefunden worden ist, verbindet sich das iPhone automatisch mit dem iPad</li>
-    <li>Das iPad zeigt alle verbundenen iPhones an</li>
-    <li>Der Scrum Master startet das Planning Poker</li>
+    <li>Der Scrum Master startet die App auf dem iPad und versetzt das iPad in den "Verbindungsmodus".</li>
+    <li>Das iPad sucht nach iPhones, welche sich mit einem iPad verbinden möchten.</li>
+    <li>Der Teilnehmer startet die App auf dem iPhone und sucht nach einem iPad. Sobald ein iPad gefunden worden ist, verbindet sich das iPhone automatisch mit dem iPad.</li>
+    <li>Das iPad zeigt alle verbundenen iPhones an.</li>
+    <li>Der Scrum Master startet das Planning Poker.</li>
 </ol>
 
-<h3>Prozesse Systemkontext "Karte wählen"</h3>
+<h3>Prozess Systemkontext "Karte wählen"</h3>
 <ol>
-    <li>Die Teilnehmer wählen eine Karte auf dem iPhone aus</li>
-    <li>Die iPhones senden den Kartenwert an das iPad</li>
-    <li>Sobald alle Teilnehmer eine Karte gewählt haben, zeigt das iPad den gewählten Kartenwert der Teilnehmer einzeln an</li>
+    <li>Die Teilnehmer wählen eine Karte auf dem iPhone aus.</li>
+    <li>Die iPhones senden den Kartenwert an das iPad.</li>
+    <li>Sobald alle Teilnehmer eine Karte gewählt haben, zeigt das iPad den gewählten Kartenwert der Teilnehmer einzeln an.</li>
 </ol>
 
 <h3 class="break">Aufbau</h3>
@@ -2296,7 +2296,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 
 <h3 class="break">Unit Testing</h3>
 <p>
-    Die App wird mittels dem Integrationsserver <a href="http://jenkins-ci.org">Jenkins</a> bei jedem Change neu gebaut. Vor dem Erstellen der App werden alle Unit Tests ausgeführt. Dafür wird das OpenSource Tool <a href="https://github.com/facebook/xctool">xctool</a> verwendet.
+    Die App wird mittels dem Integrationsserver <a href="http://jenkins-ci.org">Jenkins</a> bei jedem Change neu gebaut. Vor dem Erstellen der App werden alle Unit Tests ausgeführt. Dafür wird das Open-Source Tool <a href="https://github.com/facebook/xctool">xctool</a> verwendet.
 </p>
 <p>Unit Tests wurden pro Package durchgeführt. Nachfolgend eine Übersicht der Tests und deren Resultate.</p>
 
@@ -2310,14 +2310,14 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <div class="chapter">
 <h2>Analyse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a>, die für Spielentwickler entworfen worden ist. Diese API's bieten unter anderem die Möglichkeit, eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant, an. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entworfen worden ist. Diese API's bieten unter anderem die Möglichkeit, eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant, aufzubauen. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
 </p>
 <p>iPlanningPoker basiert noch auf den GKSession Klassen, da die Entwicklung vor der Veröffentlichung von iOS7 begonnen hat. Eine Migration auf das neue Framework ist möglich und wird nach dem Abschluss der Arbeit vorangetrieben.</p>
 
-<p class="break">Der wichtigste Punkt weshalb dieses Framework gewählt wurde, ist dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN miteinander verbinden. Das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
+<p class="break">Der wichtigste Punkt weshalb dieses Framework gewählt wurde, ist der Vorteil, dass sich die App nicht für einen Kommunikationskanal entscheiden muss. Es wird automatisch vom Framework entschieden, ob sich nun die Geräte via Bluetooth oder WLAN miteinander verbinden. Das Auffinden, wie auch das Anpreisen der Geräte geschieht über einen Abstraktionslayer. Für diese Tasks wird innerhalb von GameKit der Apple Service <a href="https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/NetServices/Introduction.html">Bonjour</a> verwendet.</p>
 
 <figure id="figure-bonjour" class="inline">
 <img src="images/bonjour_overview.png" width="400" />
@@ -2344,13 +2344,13 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <figcaption>Client Server Verbindungen</figcaption>
 </figure>
 
-<p>Im Gegensatz dazu steht die Peer-to-Peer Verbindung(<i>GKSessionModePeer</i>), bei welcher alle beteiligten Endgeräte miteinander kommunizieren.</p>
+<p>Im Gegensatz dazu steht die Peer-to-Peer Verbindung <i>GKSessionModePeer</i>, bei welcher alle beteiligten Endgeräte miteinander kommunizieren.</p>
 <figure id="figure-peer-to-peer" class="inline">
 <img src="images/peer_to_peer.png" width="400" />
 <figcaption>Peer-to-Peer Verbindungen</figcaption>
 </figure>
 
-<p>Da iPlanningPoker in einem Client-Server Modus funktioniert, wurde entschieden die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
+<p>Da iPlanningPoker in einem Client-Server Modus funktioniert, wurde entschieden, die Klasse GKSession in den Modi "GKSessionModeServer" und "GKSessionModeClient" zu instanzieren. Intern in der GKSession, welche für einen Entwickler nicht sichtbar ist, wird immer noch ein Peer-to-Peer Netzwerk verwendet.</p>
 
 <p class="break">Die iOS API's arbeiten stark nach dem <a href="http://en.wikipedia.org/wiki/Delegation_pattern">Delegation Pattern</a>. Das Protokoll <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSessionDelegate_Protocol/Reference/Reference.html">GKSessionDelegate</a> wird implementiert, um auf Events reagieren zu können. Typische Events sind:</p>
 <ul>
@@ -2364,7 +2364,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <p>Der Abschnitt behandelt die wichtigsten Methoden der GameKit API, welche in diesem Projekt verwendet worden sind. Um eine vollständige Übersicht zu erhalten, empfiehlt sich die <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">Dokumentation</a> von Apple.</p>
 
 <h4>Client</h4>
-<p>Diese Instanzmethode wird verwendet, um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Clients mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
+<p>Diese Instanzmethode wird verwendet um den Client zu instanzieren. Die <i>sessionID</i> wird als Konstante verwendet, damit alle Clients mit dem gleichen Server kommunizieren können. Der <i>displayName</i> ist der Gerätename und der <i>sessionMode</i> erhält den Wert des Enums "GKSessionModeClient".</p>
 <pre class="code">
 <code>
 - (id)initWithSessionID:(NSString *)sessionID displayName:(NSString *)name
@@ -2522,7 +2522,7 @@ typedef enum {
 <figcaption>iPhone sucht nach einem iPad</figcaption>
 </figure>
 
-<p>Der Scrum Master startet ein neues Planning Poker auf dem iPad. Dabei wird ihm eine (leere)Tabelle präsentiert. Das iPad befindet sich nun im Verbindungsmodus und ist für die iPhones sichtbar. Alle iPhones, welche sich erfolgreich mit dem iPad verbunden haben, werden in dieser Tabelle dargestellt. Die App befindet sich im Status <i>ServerStateAcceptingConnections</i>.</p>
+<p>Der Scrum Master startet ein neues Planning Poker auf dem iPad. Dabei wird ihm eine (leere) Tabelle präsentiert. Das iPad befindet sich nun im Verbindungsmodus und ist für die iPhones sichtbar. Alle iPhones, welche sich erfolgreich mit dem iPad verbunden haben, werden in dieser Tabelle dargestellt. Die App befindet sich im Status <i>ServerStateAcceptingConnections</i>.</p>
 <figure id="figure-start-screen-iphad" class="inline">
 <img src="images/ipad_connected_screen.png" width="350" />
 <figcaption>iPad wartet auf zusätzliche Teilnehmer</figcaption>
@@ -2591,7 +2591,7 @@ Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt 
 
 <p>Das Schreiben eines eigenen Netzwerkprotokolls war eine Herausforderung. Wir haben bisher im Studium wenig auf diesem Level gemacht, aber ich denke, die erarbeitete Lösung hat die Anforderungen erfüllt. Das Protokoll ist erweiterbar, was ein persönliches Ziel bei der Definition des Protokolls war. Es war äusserst spannend wieder mal mit Bits, Bytes und Hex zu arbeiten.</p>
 
-<p>Dass eine voll funktionsumfassende App entstanden ist, erfüllt einem mit Stolz. Mit iOS7 wurd ein flaches UI eingeführt, was mir mit meinen bescheidenen Designfähigkeiten in die Hände spielte. Das simple UI passt äussert gut zu iOS7 und erfüllt den Job.< br/>
+<p>Dass eine voll funktionsumfassende App entstanden ist, erfüllt mich mit Stolz. Mit iOS7 wurd ein flaches UI eingeführt, was mir mit meinen bescheidenen Designfähigkeiten in die Hände spielte. Das simple UI passt äussert gut zu iOS7 und erfüllt den Job.< br/>
 Der nächste Schritt nach der Abgabe der Semsterarbeit, wird die Veröffentlichung der App im AppStore sein. Ich erhoffe mir, dass auch weitere Teams von dieser App profitieren können. In unserem Team wird die App bereits eingesetzt und hat uns das Leben vereinfacht.</p>
 
 <p>Insgesamt kann ich sagen, dass die Semesterarbeit viel Spass und Schweiss bereitet hat. Der Aufwand der Dokumentation darf nie unterschätzt werden, was ich bei meiner nächsten Arbeit besser berücksichtigen werde. Ein gutes Projektmanagment fördert den reibungslosen Ablauf der Arbeit, was ich weiterhin so machen werden.</p>
