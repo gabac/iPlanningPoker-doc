@@ -1008,7 +1008,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
     <h3>Sourcecode</h3>
     
     <p>
-    Der Sourcecode der iOS App ist ebenfalls mit der Versionsverwaltungssoftware
+    Der Sourcecode der iOS App wurde ebenfalls mit der Versionsverwaltungssoftware
     Git verwaltet und kann über den Online-Service GitHub abgerufen werden.
     </p>
     
@@ -1076,7 +1076,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <h3>User Interface</h3>
 
 <p>
-    Die Auswahl der Karten wird mittels dem Paradigma Coverflow dargestellt. Coverflow wird auf dem iPhone z.B.
+    Die Auswahl der Karten wird mit Hilfe des Coverflows Paradigma dargestellt. Coverflow wird auf dem iPhone z.B.
     für die Albumauswahl innerhalb der Musik App verwendet. Der User wird die Möglichkeit haben, zwischen den
     verschiedenen Kartenwerten hin und her zu wischen. Hat er sich für einen Wert entschieden, kann er die Karte
     selektieren und der Wert wird zum iPad übertragen.
@@ -2009,8 +2009,8 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Soll Verhalten</th>
             <td>
-                - Die App soll ohne Probleme aufstarten<br />
-                - Es muss möglich sein, eine neue Planning Session zu starten<br />
+                - Die App startet ohne Probleme<br />
+                - Es ist möglich, eine neue Planning Session zu starten<br />
                 - Das iPad befindet sich im Verbindungsmodus und erscheint auf den anderen iPhones<br />
             </td>
         </tr>
@@ -2055,8 +2055,8 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         <tr>
             <th>Soll Verhalten</th>
             <td>
-                - Die App soll ohne Probleme aufstarten<br />
-                - Es muss möglich sein, eine neue Planning Session zu starten<br />
+                - Die App startet ohne Probleme<br />
+                - Es ist möglich, eine neue Planning Session zu starten<br />
                 - Das iPhone kann sich mit einem iPad verbinden<br />
                 - Sobald ein iPhone mit dem iPad verbunden ist, erscheint es in einer Listenübersicht auf dem iPad<br />
             </td>
@@ -2188,7 +2188,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
         </tr>
         <tr>
             <th>Aktivität</th>
-            <td>Solange noch nicht alle Teilnehmer sich für eine Karte entschieden haben, dürfen die Kartenwerte auf dem iPad nicht ersichtlich sein. Es sollen nun alle Teilnehmer eine Karte wählen</td>
+            <td>Solange sich noch nicht alle Teilnehmer für eine Karte entschieden haben, dürfen die Kartenwerte auf dem iPad nicht ersichtlich sein. Es sollen nun alle Teilnehmer eine Karte wählen</td>
         </tr>
         <tr>
             <th>Soll Verhalten</th>
@@ -2273,7 +2273,7 @@ Das iPad wird dabei als "Server" agieren und die Verbindung mit den iPhones aufb
 <div class="chapter">
 <h2>Analyse GameKit API</h2>
 <h3>Einführung</h3>
-<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entworfen worden ist. Diese API's bieten unter anderem die Möglichkeit, eine Peer-to-Peer bzw. Server Client Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant, aufzubauen. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
+<p><a href="https://developer.apple.com/library/ios/documentation/NetworkingInternet/Conceptual/GameKit_Guide/Introduction/Introduction.html">GameKit</a> ist eine Sammlung von <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GameKit_Collection/_index.html">API's</a> die für Spielentwickler entworfen worden ist. Diese API's bieten unter anderem die Möglichkeit, eine Peer-to-Peer bzw. Client Server Verbindung, auch <a href="https://developer.apple.com/library/ios/documentation/GameKit/Reference/GKSession_Class/Reference/Reference.html">GKSession</a> gennant, aufzubauen. Dies wird nicht nur im Zusammenhang mit Spielen gebraucht und wird von verschiedensten App Typen eingesetzt.
 </p>
 <p>
     Apple hat diesen Zustand bemerkt und bietet mit iOS7 diese API's unabhängig von GameKit an. Die neugeschaffenen API's werden unter dem <a href="https://developer.apple.com/library/ios/documentation/MultipeerConnectivity/Reference/MultipeerConnectivityFramework/_index.html">"Multipeer Connectivity"</a> Framework zusammengefasst. Die neuen API's bieten genau die gleiche Funktionalität, haben aber verschiedene Bereiche vereinfacht. Im Gegenzug wurden die GKSession Klassen auf "deprecated" gesetzt und werden in naher Zukunft entfernt. 
@@ -2343,7 +2343,7 @@ sessionMode:(GKSessionMode)mode</code>
 
 <p>
     Um Daten an den Server senden zu können, in diesem Fall den Kartenwert, werden diese in einer speziellen Klasse aufbereitet. Das Kapitel <a href="#chapter-9">Netzwerkverkehr</a> behandelt dieses Thema im Detail.<br />
-    Das <i>peers</i> Array beinhaltet in diesem Fall nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung gewährleistet, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
+    Das <i>peers</i> Array enthalten nur einen Eintrag, die UUID des Servers. Weiter kann entschieden werden, in welchem Modus die Daten geschickt werden sollen. Wir verwenden den Wert <i>GKSendDataReliable</i> des Enums. Diese Einstellung gewährleistet, dass mehrmals versucht wird die Daten zu schicken und nicht sofort nach dem ersten Fehlversuch die Übertragung abbricht.</p>
 <pre class="code">
 <code>
 - (BOOL)sendData:(NSData *)data toPeers:(NSArray *)peers
@@ -2552,12 +2552,12 @@ Jedem verbundenen iPhone wird ein SignIn-Request geschickt. Zu diesem Zeitpunkt 
 <p>Es gab im Internet leider nicht viele hilfreiche Quellen, dafür war aber die Dokumentation von Apple ausgezeichnet. Spannend war auch, dass Apple mit iOS7 genau die von mir verwendetet API aus GameKit herausgelöst hat. Dies ist eine logische Evolution dieser API. Ich kann mir vorstellen, dass solche Apps in Zukunft immer beliebter werden und noch in einer grösseren Anzahl erscheinen werden.
 </p>
 
-<p>Das Schreiben eines eigenen Netzwerkprotokolls war eine Herausforderung. Wir haben bisher im Studium wenig auf diesem Level gemacht, aber ich denke, die erarbeitete Lösung hat die Anforderungen erfüllt. Das Protokoll ist erweiterbar, was ein persönliches Ziel bei der Definition des Protokolls war. Es war äusserst spannend wieder mal mit Bits, Bytes und Hex zu arbeiten.</p>
+<p>Das Schreiben eines eigenen Netzwerkprotokolls war eine Herausforderung. Wir haben bisher im Studium wenig auf diesem Level gemacht, aber ich denke, die erarbeitete Lösung hat die Anforderungen erfüllt. Ausserden ist das Protokoll erweiterbar, was ein persönliches Ziel bei der Definition des Protokolls war. Es war äusserst spannend wieder mal mit Bits, Bytes und Hex zu arbeiten.</p>
 
-<p class="break">Dass eine voll funktionsumfassende App entstanden ist, erfüllt mich mit Stolz. Mit iOS7 wurd ein flaches UI eingeführt, was mir mit meinen bescheidenen Designfähigkeiten in die Hände spielte. Das simple UI passt äussert gut zu iOS7 und erfüllt den Job.< br/>
+<p class="break">Dass eine voll funktionsumfassende App entstanden ist, erfüllt mich mit Stolz. Mit iOS7 wurd ein flaches UI eingeführt, was mir mit meinen bescheidenen Designfähigkeiten in die Hände spielte. Das simple UI passt ausserordentlich gut zu iOS7 und vereinfacht das Arbeiten mit der App.< br/>
 Der nächste Schritt nach der Abgabe der Semsterarbeit, wird die Veröffentlichung der App im AppStore sein. Ich erhoffe mir, dass auch weitere Teams von dieser App profitieren können. In unserem Team wird die App bereits eingesetzt und hat uns das Leben vereinfacht.</p>
 
-<p>Insgesamt kann ich sagen, dass die Semesterarbeit viel Spass und Schweiss bereitet hat. Der Aufwand der Dokumentation darf nie unterschätzt werden, was ich bei meiner nächsten Arbeit besser berücksichtigen werde. Ein gutes Projektmanagment fördert den reibungslosen Ablauf der Arbeit, was ich weiterhin so machen werden.</p>
+<p>Insgesamt kann ich sagen, dass die Semesterarbeit viel Spass und Schweiss bereitet hat. Der Aufwand der Dokumentation darf nie unterschätzt werden, was ich bei meiner nächsten Arbeit besser berücksichtigen werde. Ein gutes Projektmanagment fördert den reibungslosen Ablauf der Arbeit, dies werde ich weiterhin so machen werden.</p>
 
 <p>Viel Spass beim nächsten Planning Poker!</p>
 
